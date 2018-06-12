@@ -12,7 +12,6 @@
 
 #endif /* UrbanAirshipSDKTesting_Bridging_Header_h */
 
-#import <BDPointSDK.h>
 #import "UABluedotLocationServiceAdapter.h"
-#import <AirshipKit/AirshipKit.h>
+@import AirshipKit;
 

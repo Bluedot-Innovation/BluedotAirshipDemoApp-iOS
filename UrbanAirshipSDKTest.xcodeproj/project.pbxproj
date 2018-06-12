@@ -12,14 +12,7 @@
 		9A36A2011CE2C76000AF1A7F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A36A1FF1CE2C76000AF1A7F /* Main.storyboard */; };
 		9A36A2031CE2C76000AF1A7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A36A2021CE2C76000AF1A7F /* Assets.xcassets */; };
 		9A36A2061CE2C76000AF1A7F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A36A2041CE2C76000AF1A7F /* LaunchScreen.storyboard */; };
-		9A36A2121CE2C79600AF1A7F /* Airship in Resources */ = {isa = PBXBuildFile; fileRef = 9A36A2111CE2C79600AF1A7F /* Airship */; };
-		9A36A2141CE2C79E00AF1A7F /* AirshipKit in Resources */ = {isa = PBXBuildFile; fileRef = 9A36A2131CE2C79E00AF1A7F /* AirshipKit */; };
-		9A36A21B1CE2C81100AF1A7F /* AirshipKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A36A21A1CE2C7D700AF1A7F /* AirshipKit.framework */; };
-		9A36A21C1CE2C81100AF1A7F /* AirshipKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9A36A21A1CE2C7D700AF1A7F /* AirshipKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9A36A2211CE2C8AA00AF1A7F /* AirshipConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9A36A2201CE2C8AA00AF1A7F /* AirshipConfig.plist */; };
-		9A36A25C1CE3F5FC00AF1A7F /* include in Resources */ = {isa = PBXBuildFile; fileRef = 9A36A2591CE3F5FC00AF1A7F /* include */; };
-		9A36A25D1CE3F5FC00AF1A7F /* libBDPointSDK-iphoneos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A36A25A1CE3F5FC00AF1A7F /* libBDPointSDK-iphoneos.a */; };
-		9A36A25E1CE3F5FC00AF1A7F /* libBDPointSDK-iphonesimulator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A36A25B1CE3F5FC00AF1A7F /* libBDPointSDK-iphonesimulator.a */; };
 		9A36A2671CE3F81F00AF1A7F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A36A2601CE3F81F00AF1A7F /* AVFoundation.framework */; };
 		9A36A2681CE3F81F00AF1A7F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A36A2611CE3F81F00AF1A7F /* CoreGraphics.framework */; };
 		9A36A2691CE3F81F00AF1A7F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A36A2621CE3F81F00AF1A7F /* CoreLocation.framework */; };
@@ -29,26 +22,8 @@
 		9A36A26D1CE3F81F00AF1A7F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A36A2661CE3F81F00AF1A7F /* UIKit.framework */; };
 		9A36A26F1CE3F9DD00AF1A7F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A36A26E1CE3F9DD00AF1A7F /* AudioToolbox.framework */; };
 		9A36A27C1CE4696000AF1A7F /* UABluedotLocationServiceAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A36A27B1CE4696000AF1A7F /* UABluedotLocationServiceAdapter.m */; };
-		9A5B33951E65475D002A37F8 /* BDDataModel.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9A5B33941E65475D002A37F8 /* BDDataModel.bundle */; };
 		9A976DDC1CED9C0F00F21BE7 /* CheckIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A976DDB1CED9C0F00F21BE7 /* CheckIn.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		9A36A2191CE2C7D700AF1A7F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9A36A2151CE2C7D600AF1A7F /* AirshipKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 494DD9571B0EB677009C134E;
-			remoteInfo = AirshipKit;
-		};
-		9A36A21D1CE2C81100AF1A7F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9A36A2151CE2C7D600AF1A7F /* AirshipKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 494DD9561B0EB677009C134E;
-			remoteInfo = AirshipKit;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		9A36A21F1CE2C81100AF1A7F /* Embed Frameworks */ = {
@@ -57,7 +32,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				9A36A21C1CE2C81100AF1A7F /* AirshipKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -72,14 +46,8 @@
 		9A36A2021CE2C76000AF1A7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9A36A2051CE2C76000AF1A7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9A36A2071CE2C76000AF1A7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9A36A2111CE2C79600AF1A7F /* Airship */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Airship; sourceTree = "<group>"; };
-		9A36A2131CE2C79E00AF1A7F /* AirshipKit */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AirshipKit; sourceTree = "<group>"; };
-		9A36A2151CE2C7D600AF1A7F /* AirshipKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AirshipKit.xcodeproj; path = AirshipKit/AirshipKit.xcodeproj; sourceTree = "<group>"; };
 		9A36A2201CE2C8AA00AF1A7F /* AirshipConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AirshipConfig.plist; sourceTree = "<group>"; };
 		9A36A2221CE2CAC900AF1A7F /* UrbanAirshipSDKTest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UrbanAirshipSDKTest-Bridging-Header.h"; sourceTree = "<group>"; };
-		9A36A2591CE3F5FC00AF1A7F /* include */ = {isa = PBXFileReference; lastKnownFileType = folder; name = include; path = PointSDK/include; sourceTree = "<group>"; };
-		9A36A25A1CE3F5FC00AF1A7F /* libBDPointSDK-iphoneos.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libBDPointSDK-iphoneos.a"; path = "PointSDK/libBDPointSDK-iphoneos.a"; sourceTree = "<group>"; };
-		9A36A25B1CE3F5FC00AF1A7F /* libBDPointSDK-iphonesimulator.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libBDPointSDK-iphonesimulator.a"; path = "PointSDK/libBDPointSDK-iphonesimulator.a"; sourceTree = "<group>"; };
 		9A36A2601CE3F81F00AF1A7F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		9A36A2611CE3F81F00AF1A7F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		9A36A2621CE3F81F00AF1A7F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -91,7 +59,6 @@
 		9A36A27A1CE4600200AF1A7F /* UABluedotLocationServiceAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UABluedotLocationServiceAdapter.h; sourceTree = "<group>"; };
 		9A36A27B1CE4696000AF1A7F /* UABluedotLocationServiceAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UABluedotLocationServiceAdapter.m; sourceTree = "<group>"; };
 		9A5B33931E65454B002A37F8 /* UrbanAirshipSDKTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UrbanAirshipSDKTest.entitlements; sourceTree = "<group>"; };
-		9A5B33941E65475D002A37F8 /* BDDataModel.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = BDDataModel.bundle; path = PointSDK/BDDataModel.bundle; sourceTree = "<group>"; };
 		9A976DDB1CED9C0F00F21BE7 /* CheckIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckIn.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,9 +75,6 @@
 				9A36A26B1CE3F81F00AF1A7F /* MapKit.framework in Frameworks */,
 				9A36A26C1CE3F81F00AF1A7F /* SystemConfiguration.framework in Frameworks */,
 				9A36A26D1CE3F81F00AF1A7F /* UIKit.framework in Frameworks */,
-				9A36A25D1CE3F5FC00AF1A7F /* libBDPointSDK-iphoneos.a in Frameworks */,
-				9A36A21B1CE2C81100AF1A7F /* AirshipKit.framework in Frameworks */,
-				9A36A25E1CE3F5FC00AF1A7F /* libBDPointSDK-iphonesimulator.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,11 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				9A36A25F1CE3F79900AF1A7F /* Frameworks */,
-				9A36A2571CE3F5BA00AF1A7F /* Dependency */,
 				9A36A2201CE2C8AA00AF1A7F /* AirshipConfig.plist */,
-				9A36A2151CE2C7D600AF1A7F /* AirshipKit.xcodeproj */,
-				9A36A2131CE2C79E00AF1A7F /* AirshipKit */,
-				9A36A2111CE2C79600AF1A7F /* Airship */,
 				9A36A1FA1CE2C76000AF1A7F /* UrbanAirshipSDKTest */,
 				9A36A1F91CE2C76000AF1A7F /* Products */,
 			);
@@ -155,33 +115,6 @@
 				9A976DDB1CED9C0F00F21BE7 /* CheckIn.swift */,
 			);
 			path = UrbanAirshipSDKTest;
-			sourceTree = "<group>";
-		};
-		9A36A2161CE2C7D600AF1A7F /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				9A36A21A1CE2C7D700AF1A7F /* AirshipKit.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		9A36A2571CE3F5BA00AF1A7F /* Dependency */ = {
-			isa = PBXGroup;
-			children = (
-				9A36A2581CE3F5C700AF1A7F /* PointSDK */,
-			);
-			name = Dependency;
-			sourceTree = "<group>";
-		};
-		9A36A2581CE3F5C700AF1A7F /* PointSDK */ = {
-			isa = PBXGroup;
-			children = (
-				9A5B33941E65475D002A37F8 /* BDDataModel.bundle */,
-				9A36A2591CE3F5FC00AF1A7F /* include */,
-				9A36A25A1CE3F5FC00AF1A7F /* libBDPointSDK-iphoneos.a */,
-				9A36A25B1CE3F5FC00AF1A7F /* libBDPointSDK-iphonesimulator.a */,
-			);
-			name = PointSDK;
 			sourceTree = "<group>";
 		};
 		9A36A25F1CE3F79900AF1A7F /* Frameworks */ = {
@@ -214,7 +147,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				9A36A21E1CE2C81100AF1A7F /* PBXTargetDependency */,
 			);
 			name = UrbanAirshipSDKTest;
 			productName = UrbanAirshipSDKTest;
@@ -253,12 +185,6 @@
 			mainGroup = 9A36A1EF1CE2C76000AF1A7F;
 			productRefGroup = 9A36A1F91CE2C76000AF1A7F /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 9A36A2161CE2C7D600AF1A7F /* Products */;
-					ProjectRef = 9A36A2151CE2C7D600AF1A7F /* AirshipKit.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				9A36A1F71CE2C76000AF1A7F /* UrbanAirshipSDKTest */,
@@ -266,29 +192,15 @@
 		};
 /* End PBXProject section */
 
-/* Begin PBXReferenceProxy section */
-		9A36A21A1CE2C7D700AF1A7F /* AirshipKit.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = AirshipKit.framework;
-			remoteRef = 9A36A2191CE2C7D700AF1A7F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
-
 /* Begin PBXResourcesBuildPhase section */
 		9A36A1F61CE2C76000AF1A7F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				9A36A2061CE2C76000AF1A7F /* LaunchScreen.storyboard in Resources */,
-				9A36A25C1CE3F5FC00AF1A7F /* include in Resources */,
-				9A36A2141CE2C79E00AF1A7F /* AirshipKit in Resources */,
-				9A5B33951E65475D002A37F8 /* BDDataModel.bundle in Resources */,
 				9A36A2031CE2C76000AF1A7F /* Assets.xcassets in Resources */,
 				9A36A2211CE2C8AA00AF1A7F /* AirshipConfig.plist in Resources */,
 				9A36A2011CE2C76000AF1A7F /* Main.storyboard in Resources */,
-				9A36A2121CE2C79600AF1A7F /* Airship in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,14 +219,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		9A36A21E1CE2C81100AF1A7F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = AirshipKit;
-			targetProxy = 9A36A21D1CE2C81100AF1A7F /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		9A36A1FF1CE2C76000AF1A7F /* Main.storyboard */ = {
@@ -374,7 +278,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -415,7 +319,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -432,7 +336,6 @@
 				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/PointSDK/include";
 				INFOPLIST_FILE = UrbanAirshipSDKTest/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -459,7 +362,6 @@
 				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/PointSDK/include";
 				INFOPLIST_FILE = UrbanAirshipSDKTest/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
