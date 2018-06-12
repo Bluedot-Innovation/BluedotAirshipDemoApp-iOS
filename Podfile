@@ -6,7 +6,7 @@ target 'UrbanAirshipSDKTest' do
   use_frameworks!
 
   # Pods for UrbanAirshipSDKTest
-  pod 'UrbanAirship-iOS-AppExtensions'
   pod 'BluedotPointSDK'
+  pod 'UrbanAirship-iOS-SDK'
 
 end
