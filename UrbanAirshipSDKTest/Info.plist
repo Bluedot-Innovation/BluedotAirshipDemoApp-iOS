@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string></string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string></string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -55,10 +59,10 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>bluedotApiKey</key>
-	<string>db1e5690-1341-11e7-ae25-06a56cd124c5</string>
+	<string>ADD YOUR API KEY</string>
 	<key>bluedotPackageName</key>
-	<string>com.mic.bd.ua.test</string>
+	<string>ADD YOUR PACKAGE NAME</string>
 	<key>bluedotUsername</key>
-	<string>melwin@bluedotinnovation.com</string>
+	<string>ADD YOUR USERNAME</string>
 </dict>
 </plist>
