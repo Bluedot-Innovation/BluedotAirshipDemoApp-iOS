@@ -46,7 +46,7 @@
 		9A36A2051CE2C76000AF1A7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9A36A2071CE2C76000AF1A7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A36A2201CE2C8AA00AF1A7F /* AirshipConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AirshipConfig.plist; sourceTree = "<group>"; };
-		9A36A2221CE2CAC900AF1A7F /* UrbanAirshipSDKTest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UrbanAirshipSDKTest-Bridging-Header.h"; sourceTree = "<group>"; };
+		9A36A2221CE2CAC900AF1A7F /* PointSDK-UrbanAirshipIntegrationExample-iOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PointSDK-UrbanAirshipIntegrationExample-iOS-Bridging-Header.h"; sourceTree = "<group>"; };
 		9A36A2601CE3F81F00AF1A7F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		9A36A2611CE3F81F00AF1A7F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		9A36A2621CE3F81F00AF1A7F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -99,14 +99,14 @@
 		9A36A1FA1CE2C76000AF1A7F /* PointSDK-UrbanAirshipIntegrationExample-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				9A5B33931E65454B002A37F8 /* UrbanAirshipSDKTest.entitlements */,
+				E1C47436211A891F007903EC /* PointSDK-UrbanAirshipIntegrationExample-iOS.entitlements */,
 				9A36A1FB1CE2C76000AF1A7F /* AppDelegate.swift */,
 				9A36A1FD1CE2C76000AF1A7F /* ViewController.swift */,
 				9A36A1FF1CE2C76000AF1A7F /* Main.storyboard */,
 				9A36A2021CE2C76000AF1A7F /* Assets.xcassets */,
 				9A36A2041CE2C76000AF1A7F /* LaunchScreen.storyboard */,
 				9A36A2071CE2C76000AF1A7F /* Info.plist */,
-				9A36A2221CE2CAC900AF1A7F /* UrbanAirshipSDKTest-Bridging-Header.h */,
+				9A36A2221CE2CAC900AF1A7F /* PointSDK-UrbanAirshipIntegrationExample-iOS-Bridging-Header.h */,
 				9A976DDB1CED9C0F00F21BE7 /* CheckIn.swift */,
 			);
 			path = "PointSDK-UrbanAirshipIntegrationExample-iOS";
@@ -325,11 +325,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = UrbanAirshipSDKTest/UrbanAirshipSDKTest.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "PointSDK-UrbanAirshipIntegrationExample-iOS/PointSDK-UrbanAirshipIntegrationExample-iOS.entitlements";
 				DEVELOPMENT_TEAM = 9H7C75E224;
 				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/PointSDK/include";
-				INFOPLIST_FILE = UrbanAirshipSDKTest/Info.plist;
+				INFOPLIST_FILE = "PointSDK-UrbanAirshipIntegrationExample-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -341,7 +341,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = au.com.bluedot.UrbanAirshipSDKTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "UrbanAirshipSDKTest/UrbanAirshipSDKTest-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "PointSDK-UrbanAirshipIntegrationExample-iOS/PointSDK-UrbanAirshipIntegrationExample-iOS-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				VALID_ARCHS = "arm64 armv7";
 			};
@@ -351,11 +351,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = UrbanAirshipSDKTest/UrbanAirshipSDKTest.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "PointSDK-UrbanAirshipIntegrationExample-iOS/PointSDK-UrbanAirshipIntegrationExample-iOS.entitlements";
 				DEVELOPMENT_TEAM = 9H7C75E224;
 				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/PointSDK/include";
-				INFOPLIST_FILE = UrbanAirshipSDKTest/Info.plist;
+				INFOPLIST_FILE = "PointSDK-UrbanAirshipIntegrationExample-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -367,7 +367,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = au.com.bluedot.UrbanAirshipSDKTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "UrbanAirshipSDKTest/UrbanAirshipSDKTest-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "PointSDK-UrbanAirshipIntegrationExample-iOS/PointSDK-UrbanAirshipIntegrationExample-iOS-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				VALID_ARCHS = "arm64 armv7";
 			};
