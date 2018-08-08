@@ -6,6 +6,6 @@ target 'PointSDK-UrbanAirshipIntegrationExample-iOS' do
   use_frameworks!
 
   # Pods for UrbanAirshipSDKTest
-  pod 'BluedotPointSDK-UrbanAirship', :git => "https://github.com/Bluedot-Innovation/PointSDK-UrbanAirship-iOS.git"
+  pod 'BluedotPointSDK-UrbanAirship'
 
 end
