@@ -55,8 +55,8 @@
 		9A36A2651CE3F81F00AF1A7F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		9A36A2661CE3F81F00AF1A7F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9A36A26E1CE3F9DD00AF1A7F /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		9A5B33931E65454B002A37F8 /* UrbanAirshipSDKTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UrbanAirshipSDKTest.entitlements; sourceTree = "<group>"; };
 		9A976DDB1CED9C0F00F21BE7 /* CheckIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckIn.swift; sourceTree = "<group>"; };
+		E1C47436211A891F007903EC /* PointSDK-UrbanAirshipIntegrationExample-iOS.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "PointSDK-UrbanAirshipIntegrationExample-iOS.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -335,10 +335,6 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/PointSDK",
 				);
-				OTHER_LDFLAGS = (
-					"-lBDPointSDK-${PLATFORM_NAME}",
-					"-ObjC",
-				);
 				PRODUCT_BUNDLE_IDENTIFIER = au.com.bluedot.UrbanAirshipSDKTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "PointSDK-UrbanAirshipIntegrationExample-iOS/PointSDK-UrbanAirshipIntegrationExample-iOS-Bridging-Header.h";
@@ -360,10 +356,6 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/PointSDK",
-				);
-				OTHER_LDFLAGS = (
-					"-lBDPointSDK-${PLATFORM_NAME}",
-					"-ObjC",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = au.com.bluedot.UrbanAirshipSDKTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
