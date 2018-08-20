@@ -60,9 +60,5 @@
 	</array>
 	<key>bluedotApiKey</key>
 	<string>ADD YOUR API KEY</string>
-	<key>bluedotPackageName</key>
-	<string>ADD YOUR PACKAGE NAME</string>
-	<key>bluedotUsername</key>
-	<string>ADD YOUR USERNAME</string>
 </dict>
 </plist>

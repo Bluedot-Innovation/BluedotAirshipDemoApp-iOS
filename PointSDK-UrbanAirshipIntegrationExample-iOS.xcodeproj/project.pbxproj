@@ -21,7 +21,6 @@
 		9A36A26C1CE3F81F00AF1A7F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A36A2651CE3F81F00AF1A7F /* SystemConfiguration.framework */; };
 		9A36A26D1CE3F81F00AF1A7F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A36A2661CE3F81F00AF1A7F /* UIKit.framework */; };
 		9A36A26F1CE3F9DD00AF1A7F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A36A26E1CE3F9DD00AF1A7F /* AudioToolbox.framework */; };
-		9A36A27C1CE4696000AF1A7F /* UABluedotLocationServiceAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A36A27B1CE4696000AF1A7F /* UABluedotLocationServiceAdapter.m */; };
 		9A976DDC1CED9C0F00F21BE7 /* CheckIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A976DDB1CED9C0F00F21BE7 /* CheckIn.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,7 +38,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		9A36A1F81CE2C76000AF1A7F /* UrbanAirshipSDKTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UrbanAirshipSDKTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A36A1F81CE2C76000AF1A7F /* PointSDK-UrbanAirshipIntegrationExample-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PointSDK-UrbanAirshipIntegrationExample-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A36A1FB1CE2C76000AF1A7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A36A1FD1CE2C76000AF1A7F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9A36A2001CE2C76000AF1A7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -47,7 +46,7 @@
 		9A36A2051CE2C76000AF1A7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9A36A2071CE2C76000AF1A7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A36A2201CE2C8AA00AF1A7F /* AirshipConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AirshipConfig.plist; sourceTree = "<group>"; };
-		9A36A2221CE2CAC900AF1A7F /* UrbanAirshipSDKTest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UrbanAirshipSDKTest-Bridging-Header.h"; sourceTree = "<group>"; };
+		9A36A2221CE2CAC900AF1A7F /* PointSDK-UrbanAirshipIntegrationExample-iOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PointSDK-UrbanAirshipIntegrationExample-iOS-Bridging-Header.h"; sourceTree = "<group>"; };
 		9A36A2601CE3F81F00AF1A7F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		9A36A2611CE3F81F00AF1A7F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		9A36A2621CE3F81F00AF1A7F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -56,10 +55,8 @@
 		9A36A2651CE3F81F00AF1A7F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		9A36A2661CE3F81F00AF1A7F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9A36A26E1CE3F9DD00AF1A7F /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		9A36A27A1CE4600200AF1A7F /* UABluedotLocationServiceAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UABluedotLocationServiceAdapter.h; sourceTree = "<group>"; };
-		9A36A27B1CE4696000AF1A7F /* UABluedotLocationServiceAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UABluedotLocationServiceAdapter.m; sourceTree = "<group>"; };
-		9A5B33931E65454B002A37F8 /* UrbanAirshipSDKTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UrbanAirshipSDKTest.entitlements; sourceTree = "<group>"; };
 		9A976DDB1CED9C0F00F21BE7 /* CheckIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckIn.swift; sourceTree = "<group>"; };
+		E1C47436211A891F007903EC /* PointSDK-UrbanAirshipIntegrationExample-iOS.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "PointSDK-UrbanAirshipIntegrationExample-iOS.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +83,7 @@
 			children = (
 				9A36A25F1CE3F79900AF1A7F /* Frameworks */,
 				9A36A2201CE2C8AA00AF1A7F /* AirshipConfig.plist */,
-				9A36A1FA1CE2C76000AF1A7F /* UrbanAirshipSDKTest */,
+				9A36A1FA1CE2C76000AF1A7F /* PointSDK-UrbanAirshipIntegrationExample-iOS */,
 				9A36A1F91CE2C76000AF1A7F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -94,27 +91,25 @@
 		9A36A1F91CE2C76000AF1A7F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9A36A1F81CE2C76000AF1A7F /* UrbanAirshipSDKTest.app */,
+				9A36A1F81CE2C76000AF1A7F /* PointSDK-UrbanAirshipIntegrationExample-iOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9A36A1FA1CE2C76000AF1A7F /* UrbanAirshipSDKTest */ = {
+		9A36A1FA1CE2C76000AF1A7F /* PointSDK-UrbanAirshipIntegrationExample-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				9A5B33931E65454B002A37F8 /* UrbanAirshipSDKTest.entitlements */,
+				E1C47436211A891F007903EC /* PointSDK-UrbanAirshipIntegrationExample-iOS.entitlements */,
 				9A36A1FB1CE2C76000AF1A7F /* AppDelegate.swift */,
 				9A36A1FD1CE2C76000AF1A7F /* ViewController.swift */,
 				9A36A1FF1CE2C76000AF1A7F /* Main.storyboard */,
 				9A36A2021CE2C76000AF1A7F /* Assets.xcassets */,
 				9A36A2041CE2C76000AF1A7F /* LaunchScreen.storyboard */,
 				9A36A2071CE2C76000AF1A7F /* Info.plist */,
-				9A36A2221CE2CAC900AF1A7F /* UrbanAirshipSDKTest-Bridging-Header.h */,
-				9A36A27A1CE4600200AF1A7F /* UABluedotLocationServiceAdapter.h */,
-				9A36A27B1CE4696000AF1A7F /* UABluedotLocationServiceAdapter.m */,
+				9A36A2221CE2CAC900AF1A7F /* PointSDK-UrbanAirshipIntegrationExample-iOS-Bridging-Header.h */,
 				9A976DDB1CED9C0F00F21BE7 /* CheckIn.swift */,
 			);
-			path = UrbanAirshipSDKTest;
+			path = "PointSDK-UrbanAirshipIntegrationExample-iOS";
 			sourceTree = "<group>";
 		};
 		9A36A25F1CE3F79900AF1A7F /* Frameworks */ = {
@@ -135,9 +130,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9A36A1F71CE2C76000AF1A7F /* UrbanAirshipSDKTest */ = {
+		9A36A1F71CE2C76000AF1A7F /* PointSDK-UrbanAirshipIntegrationExample-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9A36A20A1CE2C76000AF1A7F /* Build configuration list for PBXNativeTarget "UrbanAirshipSDKTest" */;
+			buildConfigurationList = 9A36A20A1CE2C76000AF1A7F /* Build configuration list for PBXNativeTarget "PointSDK-UrbanAirshipIntegrationExample-iOS" */;
 			buildPhases = (
 				9A36A1F41CE2C76000AF1A7F /* Sources */,
 				9A36A1F51CE2C76000AF1A7F /* Frameworks */,
@@ -148,9 +143,9 @@
 			);
 			dependencies = (
 			);
-			name = UrbanAirshipSDKTest;
+			name = "PointSDK-UrbanAirshipIntegrationExample-iOS";
 			productName = UrbanAirshipSDKTest;
-			productReference = 9A36A1F81CE2C76000AF1A7F /* UrbanAirshipSDKTest.app */;
+			productReference = 9A36A1F81CE2C76000AF1A7F /* PointSDK-UrbanAirshipIntegrationExample-iOS.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -174,7 +169,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9A36A1F31CE2C76000AF1A7F /* Build configuration list for PBXProject "UrbanAirshipSDKTest" */;
+			buildConfigurationList = 9A36A1F31CE2C76000AF1A7F /* Build configuration list for PBXProject "PointSDK-UrbanAirshipIntegrationExample-iOS" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -187,7 +182,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9A36A1F71CE2C76000AF1A7F /* UrbanAirshipSDKTest */,
+				9A36A1F71CE2C76000AF1A7F /* PointSDK-UrbanAirshipIntegrationExample-iOS */,
 			);
 		};
 /* End PBXProject section */
@@ -214,7 +209,6 @@
 				9A36A1FE1CE2C76000AF1A7F /* ViewController.swift in Sources */,
 				9A976DDC1CED9C0F00F21BE7 /* CheckIn.swift in Sources */,
 				9A36A1FC1CE2C76000AF1A7F /* AppDelegate.swift in Sources */,
-				9A36A27C1CE4696000AF1A7F /* UABluedotLocationServiceAdapter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,23 +325,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = UrbanAirshipSDKTest/UrbanAirshipSDKTest.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "PointSDK-UrbanAirshipIntegrationExample-iOS/PointSDK-UrbanAirshipIntegrationExample-iOS.entitlements";
 				DEVELOPMENT_TEAM = 9H7C75E224;
 				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/PointSDK/include";
-				INFOPLIST_FILE = UrbanAirshipSDKTest/Info.plist;
+				INFOPLIST_FILE = "PointSDK-UrbanAirshipIntegrationExample-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/PointSDK",
 				);
-				OTHER_LDFLAGS = (
-					"-lBDPointSDK-${PLATFORM_NAME}",
-					"-ObjC",
-				);
 				PRODUCT_BUNDLE_IDENTIFIER = au.com.bluedot.UrbanAirshipSDKTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "UrbanAirshipSDKTest/UrbanAirshipSDKTest-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "PointSDK-UrbanAirshipIntegrationExample-iOS/PointSDK-UrbanAirshipIntegrationExample-iOS-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				VALID_ARCHS = "arm64 armv7";
 			};
@@ -357,23 +347,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = UrbanAirshipSDKTest/UrbanAirshipSDKTest.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "PointSDK-UrbanAirshipIntegrationExample-iOS/PointSDK-UrbanAirshipIntegrationExample-iOS.entitlements";
 				DEVELOPMENT_TEAM = 9H7C75E224;
 				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/PointSDK/include";
-				INFOPLIST_FILE = UrbanAirshipSDKTest/Info.plist;
+				INFOPLIST_FILE = "PointSDK-UrbanAirshipIntegrationExample-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/PointSDK",
 				);
-				OTHER_LDFLAGS = (
-					"-lBDPointSDK-${PLATFORM_NAME}",
-					"-ObjC",
-				);
 				PRODUCT_BUNDLE_IDENTIFIER = au.com.bluedot.UrbanAirshipSDKTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "UrbanAirshipSDKTest/UrbanAirshipSDKTest-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "PointSDK-UrbanAirshipIntegrationExample-iOS/PointSDK-UrbanAirshipIntegrationExample-iOS-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				VALID_ARCHS = "arm64 armv7";
 			};
@@ -382,7 +368,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9A36A1F31CE2C76000AF1A7F /* Build configuration list for PBXProject "UrbanAirshipSDKTest" */ = {
+		9A36A1F31CE2C76000AF1A7F /* Build configuration list for PBXProject "PointSDK-UrbanAirshipIntegrationExample-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9A36A2081CE2C76000AF1A7F /* Debug */,
@@ -391,7 +377,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9A36A20A1CE2C76000AF1A7F /* Build configuration list for PBXNativeTarget "UrbanAirshipSDKTest" */ = {
+		9A36A20A1CE2C76000AF1A7F /* Build configuration list for PBXNativeTarget "PointSDK-UrbanAirshipIntegrationExample-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9A36A20B1CE2C76000AF1A7F /* Debug */,
