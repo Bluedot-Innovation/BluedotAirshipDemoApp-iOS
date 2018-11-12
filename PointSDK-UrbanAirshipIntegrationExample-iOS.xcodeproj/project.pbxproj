@@ -22,6 +22,7 @@
 		9A36A26D1CE3F81F00AF1A7F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A36A2661CE3F81F00AF1A7F /* UIKit.framework */; };
 		9A36A26F1CE3F9DD00AF1A7F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A36A26E1CE3F9DD00AF1A7F /* AudioToolbox.framework */; };
 		9A976DDC1CED9C0F00F21BE7 /* CheckIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A976DDB1CED9C0F00F21BE7 /* CheckIn.swift */; };
+		E1DDC1932193C68E0002AAA9 /* BDPLocationEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DDC1922193C68E0002AAA9 /* BDPLocationEvents.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -57,6 +58,7 @@
 		9A36A26E1CE3F9DD00AF1A7F /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		9A976DDB1CED9C0F00F21BE7 /* CheckIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckIn.swift; sourceTree = "<group>"; };
 		E1C47436211A891F007903EC /* PointSDK-UrbanAirshipIntegrationExample-iOS.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "PointSDK-UrbanAirshipIntegrationExample-iOS.entitlements"; sourceTree = "<group>"; };
+		E1DDC1922193C68E0002AAA9 /* BDPLocationEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDPLocationEvents.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				9A36A2071CE2C76000AF1A7F /* Info.plist */,
 				9A36A2221CE2CAC900AF1A7F /* PointSDK-UrbanAirshipIntegrationExample-iOS-Bridging-Header.h */,
 				9A976DDB1CED9C0F00F21BE7 /* CheckIn.swift */,
+				E1DDC1922193C68E0002AAA9 /* BDPLocationEvents.swift */,
 			);
 			path = "PointSDK-UrbanAirshipIntegrationExample-iOS";
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 			files = (
 				9A36A1FE1CE2C76000AF1A7F /* ViewController.swift in Sources */,
 				9A976DDC1CED9C0F00F21BE7 /* CheckIn.swift in Sources */,
+				E1DDC1932193C68E0002AAA9 /* BDPLocationEvents.swift in Sources */,
 				9A36A1FC1CE2C76000AF1A7F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

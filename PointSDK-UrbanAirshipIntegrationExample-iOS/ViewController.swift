@@ -8,7 +8,7 @@
 
 import UIKit
 import MapKit
-import BluedotPointSDK_UrbanAirship
+import BDPointSDK
 
 enum AppState: String {
     case notAuthenticated = "Not Authenticated"
@@ -18,14 +18,10 @@ enum AppState: String {
     case pushMessageReceived = "Push message received"
 }
 
+let ApiKeyProperty = "bluedotApiKey"
+
 class ViewController: UIViewController
 {
-    var state: AppState!
-    {
-        didSet {
-            stateLabel.text = state.rawValue
-        }
-    }
     
     var latestCheckIn: CheckIn?
     {
@@ -47,38 +43,42 @@ class ViewController: UIViewController
     @IBOutlet weak var fenceNameLabel: UILabel!
     @IBOutlet weak var zoneNameLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
-
+    @IBOutlet weak var authenticateButton: UIButton!
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
-        state = .notAuthenticated
-        
         mapView.delegate = self
         UAirship.push().pushNotificationDelegate = self
-        UABluedotLocationServiceAdapter.shared().delegate = self
+        BDLocationManager.instance()?.locationDelegate = self
+        BDLocationManager.instance()?.sessionDelegate = self
+        
+        stateLabel.text = AppState.notAuthenticated.rawValue
         
         resetCheckIns()
     }
     
     @IBAction func authenticatePointSDK(_ sender: UIButton)
     {
-        let locationServiceAdapter = UABluedotLocationServiceAdapter.shared()
-        if case .notAuthenticated = state!
-        {
-            locationServiceAdapter?.authenticate()
-            sender.setTitle("Logout", for: .normal)
+        guard let apiKey = Bundle.main.object(forInfoDictionaryKey: ApiKeyProperty) as? String else {
+            return
         }
-        else
-        {
-            locationServiceAdapter?.logout()
-            sender.setTitle("Authenticate", for: .normal)
+        
+        switch BDLocationManager.instance()!.authenticationState {
+        case .authenticated:
+            BDLocationManager.instance()?.logOut()
+            
+        case .notAuthenticated:
+            BDLocationManager.instance()?.authenticate(withApiKey: apiKey)
+            
+        default:
+            return
         }
     }
 }
 
-extension ViewController
-{
+extension ViewController {
     func resetCheckIns() {
         mapView.removeAnnotations(checkIns)
         checkIns = []
@@ -86,27 +86,22 @@ extension ViewController
     }
 }
 
-extension ViewController: MKMapViewDelegate
-{
+extension ViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
-        if case .notAuthenticated = state!
-        {
+        if case BDLocationManager.instance()?.authenticationState = BDAuthenticationState.notAuthenticated {
             let span = MKCoordinateSpanMake((userLocation.location?.horizontalAccuracy ?? 0) / 30000, (userLocation.location?.verticalAccuracy ?? 0) / 30000)
             mapView.setRegion(MKCoordinateRegionMake(userLocation.coordinate, span), animated: true)
         }
     }
 }
 
-extension ViewController: UAPushNotificationDelegate
-{
-    func receivedForegroundNotification(_ notification: [AnyHashable : Any])
-    {
-        state = .pushMessageReceived
+extension ViewController: UAPushNotificationDelegate {
+    func receivedForegroundNotification(_ notification: [AnyHashable : Any]) {
+        stateLabel.text = AppState.pushMessageReceived.rawValue
         
         let alertMessage = notification["alert"] as! String
         
-        if let latestCheckIn = latestCheckIn
-        {
+        if let latestCheckIn = latestCheckIn {
             let alert = UIAlertController(title: "Lastest trigger: \(latestCheckIn.fenceName) in \(latestCheckIn.zoneName)", message: alertMessage, preferredStyle: .alert)
             let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
             alert.addAction(ok)
@@ -114,47 +109,47 @@ extension ViewController: UAPushNotificationDelegate
         }
     }
     
-    func receivedBackgroundNotification(_ notification: [AnyHashable : Any])
-    {
-        state = .pushMessageReceived
+    func receivedBackgroundNotification(_ notification: [AnyHashable : Any]) {
+        stateLabel.text = AppState.pushMessageReceived.rawValue
         
         let alertMessage = notification["alert"] as! String
         
-        if let latestCheckIn = latestCheckIn
-        {
+        if let latestCheckIn = latestCheckIn {
             let alert = UIAlertController(title: "Lastest trigger: \(latestCheckIn.fenceName) in \(latestCheckIn.zoneName)", message: alertMessage, preferredStyle: .alert)
             let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
             alert.addAction(ok)
             present(alert, animated: true, completion: nil)
         }
-
     }
 }
 
-extension ViewController: UABluedotLocationServiceAdapterDelegate
-{
-    func didCheck(intoFence fence: BDFenceInfo!, inZone zoneInfo: BDZoneInfo!, atLocation location: BDLocationInfo!, willCheckOut: Bool, withCustomData customData: [AnyHashable : Any]!, withTags tags: [String]!) {
-        state = .checkInTriggered
+extension ViewController: BDPointDelegate {
+    func willAuthenticate(withApiKey apiKey: String!) {
         
-        let checkIn = CheckIn(fenceName: fence.name, zoneName: zoneInfo.name, triggeredTime: location.timestamp, coordinate: CLLocationCoordinate2DMake(location.latitude, location.longitude))
-        latestCheckIn = checkIn
     }
     
-    func didCheckOut(fromFence fence: BDFenceInfo!, inZone zoneInfo: BDZoneInfo!, withDuration checkedInDuration: UInt, withCustomData customData: [NSObject : AnyObject]!, withTags tags: [String]!)
-    {
-        state = .checkOutTriggered
+    func authenticationWasSuccessful() {
+        stateLabel.text = AppState.authenticated.rawValue
+        authenticateButton.setTitle("Logout", for: .normal)
     }
     
-    func didAuthenticate()
-    {
-        state = .authenticated
+    func authenticationWasDenied(withReason reason: String!) {
+        stateLabel.text = AppState.notAuthenticated.rawValue
+        authenticateButton.setTitle("Authenticate", for: .normal)
     }
     
-    func didLogout()
-    {
-        state = .notAuthenticated
-        resetCheckIns()
+    func authenticationFailedWithError(_ error: Error!) {
+        stateLabel.text = AppState.notAuthenticated.rawValue
+        authenticateButton.setTitle("Authenticate", for: .normal)
     }
-
+    
+    func didEndSession() {
+        stateLabel.text = AppState.notAuthenticated.rawValue
+        authenticateButton.setTitle("Authenticate", for: .normal)
+    }
+    
+    func didEndSessionWithError(_ error: Error!) {
+        stateLabel.text = AppState.notAuthenticated.rawValue
+        authenticateButton.setTitle("Authenticate", for: .normal)
+    }
 }
-
