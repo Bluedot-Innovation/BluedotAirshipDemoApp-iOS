@@ -183,7 +183,7 @@ import AirshipKit
 UAirship.takeOff()
 ```
 
-4. Add `UrbanAirship` to your checkins/checkouts
+4. Track `UrbanAirship` events in your checkins/checkouts
 
 **Objective-C**
 ```objc

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -21,8 +21,7 @@
 		9A36A26C1CE3F81F00AF1A7F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A36A2651CE3F81F00AF1A7F /* SystemConfiguration.framework */; };
 		9A36A26D1CE3F81F00AF1A7F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A36A2661CE3F81F00AF1A7F /* UIKit.framework */; };
 		9A36A26F1CE3F9DD00AF1A7F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A36A26E1CE3F9DD00AF1A7F /* AudioToolbox.framework */; };
-		9A976DDC1CED9C0F00F21BE7 /* CheckIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A976DDB1CED9C0F00F21BE7 /* CheckIn.swift */; };
-		E1DDC1932193C68E0002AAA9 /* BDPLocationEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DDC1922193C68E0002AAA9 /* BDPLocationEvents.swift */; };
+		E1DDC1932193C68E0002AAA9 /* AppDelegate+BDPLocationEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DDC1922193C68E0002AAA9 /* AppDelegate+BDPLocationEvents.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -47,7 +46,6 @@
 		9A36A2051CE2C76000AF1A7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9A36A2071CE2C76000AF1A7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A36A2201CE2C8AA00AF1A7F /* AirshipConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AirshipConfig.plist; sourceTree = "<group>"; };
-		9A36A2221CE2CAC900AF1A7F /* PointSDK-UrbanAirshipIntegrationExample-iOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PointSDK-UrbanAirshipIntegrationExample-iOS-Bridging-Header.h"; sourceTree = "<group>"; };
 		9A36A2601CE3F81F00AF1A7F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		9A36A2611CE3F81F00AF1A7F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		9A36A2621CE3F81F00AF1A7F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -56,9 +54,8 @@
 		9A36A2651CE3F81F00AF1A7F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		9A36A2661CE3F81F00AF1A7F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9A36A26E1CE3F9DD00AF1A7F /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		9A976DDB1CED9C0F00F21BE7 /* CheckIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckIn.swift; sourceTree = "<group>"; };
 		E1C47436211A891F007903EC /* PointSDK-UrbanAirshipIntegrationExample-iOS.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "PointSDK-UrbanAirshipIntegrationExample-iOS.entitlements"; sourceTree = "<group>"; };
-		E1DDC1922193C68E0002AAA9 /* BDPLocationEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDPLocationEvents.swift; sourceTree = "<group>"; };
+		E1DDC1922193C68E0002AAA9 /* AppDelegate+BDPLocationEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+BDPLocationEvents.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,16 +98,14 @@
 		9A36A1FA1CE2C76000AF1A7F /* PointSDK-UrbanAirshipIntegrationExample-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				E1C47436211A891F007903EC /* PointSDK-UrbanAirshipIntegrationExample-iOS.entitlements */,
 				9A36A1FB1CE2C76000AF1A7F /* AppDelegate.swift */,
-				9A36A1FD1CE2C76000AF1A7F /* ViewController.swift */,
-				9A36A1FF1CE2C76000AF1A7F /* Main.storyboard */,
+				E1DDC1922193C68E0002AAA9 /* AppDelegate+BDPLocationEvents.swift */,
 				9A36A2021CE2C76000AF1A7F /* Assets.xcassets */,
-				9A36A2041CE2C76000AF1A7F /* LaunchScreen.storyboard */,
 				9A36A2071CE2C76000AF1A7F /* Info.plist */,
-				9A36A2221CE2CAC900AF1A7F /* PointSDK-UrbanAirshipIntegrationExample-iOS-Bridging-Header.h */,
-				9A976DDB1CED9C0F00F21BE7 /* CheckIn.swift */,
-				E1DDC1922193C68E0002AAA9 /* BDPLocationEvents.swift */,
+				9A36A2041CE2C76000AF1A7F /* LaunchScreen.storyboard */,
+				9A36A1FF1CE2C76000AF1A7F /* Main.storyboard */,
+				E1C47436211A891F007903EC /* PointSDK-UrbanAirshipIntegrationExample-iOS.entitlements */,
+				9A36A1FD1CE2C76000AF1A7F /* ViewController.swift */,
 			);
 			path = "PointSDK-UrbanAirshipIntegrationExample-iOS";
 			sourceTree = "<group>";
@@ -158,8 +153,8 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
-				ORGANIZATIONNAME = "Jason Xie";
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = "Bluedot Innovation";
 				TargetAttributes = {
 					9A36A1F71CE2C76000AF1A7F = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -173,7 +168,7 @@
 				};
 			};
 			buildConfigurationList = 9A36A1F31CE2C76000AF1A7F /* Build configuration list for PBXProject "PointSDK-UrbanAirshipIntegrationExample-iOS" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -210,8 +205,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A36A1FE1CE2C76000AF1A7F /* ViewController.swift in Sources */,
-				9A976DDC1CED9C0F00F21BE7 /* CheckIn.swift in Sources */,
-				E1DDC1932193C68E0002AAA9 /* BDPLocationEvents.swift in Sources */,
+				E1DDC1932193C68E0002AAA9 /* AppDelegate+BDPLocationEvents.swift in Sources */,
 				9A36A1FC1CE2C76000AF1A7F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -247,13 +241,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -294,13 +298,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -320,6 +334,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -334,14 +349,16 @@
 				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/PointSDK/include";
 				INFOPLIST_FILE = "PointSDK-UrbanAirshipIntegrationExample-iOS/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/PointSDK",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = au.com.bluedot.UrbanAirshipSDKTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "PointSDK-UrbanAirshipIntegrationExample-iOS/PointSDK-UrbanAirshipIntegrationExample-iOS-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				VALID_ARCHS = "arm64 armv7";
 			};
@@ -356,14 +373,16 @@
 				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/PointSDK/include";
 				INFOPLIST_FILE = "PointSDK-UrbanAirshipIntegrationExample-iOS/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/PointSDK",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = au.com.bluedot.UrbanAirshipSDKTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "PointSDK-UrbanAirshipIntegrationExample-iOS/PointSDK-UrbanAirshipIntegrationExample-iOS-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				VALID_ARCHS = "arm64 armv7";
 			};

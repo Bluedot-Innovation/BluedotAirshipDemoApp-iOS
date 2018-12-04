@@ -21,6 +21,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kka-Uk-iDh">
+                                <rect key="frame" x="16" y="28" width="343" height="593"/>
+                            </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qlC-uM-KCG">
                                 <rect key="frame" x="143.5" y="629" width="88" height="30"/>
                                 <state key="normal" title="Authenticate"/>
@@ -28,82 +31,25 @@
                                     <action selector="authenticatePointSDK:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uDU-Kf-xde"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="App state" textAlignment="right" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K0O-Rc-rx7">
-                                <rect key="frame" x="285" y="28" width="74" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fence name" textAlignment="right" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JlC-gJ-kUl" userLabel="Fence Name Label">
-                                <rect key="frame" x="265.5" y="57" width="93.5" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current app state: " lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VLR-3I-0Mf" userLabel="State Title Label">
-                                <rect key="frame" x="16" y="28" width="143.5" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last triggred fence:" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PPm-Xb-YH7" userLabel="Fence Title Label">
-                                <rect key="frame" x="16" y="57" width="150" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last triggred zone:" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vxQ-52-7on" userLabel="Zone Title Label">
-                                <rect key="frame" x="16" y="85.5" width="144" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kka-Uk-iDh">
-                                <rect key="frame" x="16" y="114" width="343" height="507"/>
-                            </mapView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zone name" textAlignment="right" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6QW-zL-dVZ" userLabel="Zone Name Label">
-                                <rect key="frame" x="273" y="85.5" width="86" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="JlC-gJ-kUl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="PPm-Xb-YH7" secondAttribute="trailing" constant="8" symbolic="YES" id="3GD-LM-wcz"/>
-                            <constraint firstItem="Kka-Uk-iDh" firstAttribute="top" secondItem="vxQ-52-7on" secondAttribute="bottom" constant="8" symbolic="YES" id="5uA-Fh-Igw"/>
-                            <constraint firstItem="PPm-Xb-YH7" firstAttribute="top" secondItem="VLR-3I-0Mf" secondAttribute="bottom" constant="8" symbolic="YES" id="6yQ-cj-hp0"/>
-                            <constraint firstItem="JlC-gJ-kUl" firstAttribute="top" secondItem="K0O-Rc-rx7" secondAttribute="bottom" constant="8" symbolic="YES" id="H8N-vi-k7o"/>
                             <constraint firstItem="qlC-uM-KCG" firstAttribute="top" secondItem="Kka-Uk-iDh" secondAttribute="bottom" constant="8" symbolic="YES" id="N6M-QA-pyd"/>
-                            <constraint firstItem="vxQ-52-7on" firstAttribute="top" secondItem="PPm-Xb-YH7" secondAttribute="bottom" constant="8" symbolic="YES" id="NbN-iy-SYH"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="JlC-gJ-kUl" secondAttribute="trailing" id="Nzc-TA-i39"/>
                             <constraint firstItem="qlC-uM-KCG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OcC-b4-6uS"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="6QW-zL-dVZ" secondAttribute="trailing" id="R6N-Ws-tSh"/>
-                            <constraint firstItem="6QW-zL-dVZ" firstAttribute="top" secondItem="JlC-gJ-kUl" secondAttribute="bottom" constant="8" symbolic="YES" id="Ww1-56-LSd"/>
-                            <constraint firstItem="6QW-zL-dVZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vxQ-52-7on" secondAttribute="trailing" constant="8" symbolic="YES" id="XxG-Cq-EW4"/>
-                            <constraint firstItem="vxQ-52-7on" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="ZIo-lP-cPr"/>
-                            <constraint firstItem="K0O-Rc-rx7" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="VLR-3I-0Mf" secondAttribute="trailing" constant="8" symbolic="YES" id="Zbw-8x-h6v"/>
-                            <constraint firstItem="K0O-Rc-rx7" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="bfo-VB-xtn"/>
+                            <constraint firstItem="Kka-Uk-iDh" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="TWl-z4-BzL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Kka-Uk-iDh" secondAttribute="trailing" id="cll-Qh-yWc"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="K0O-Rc-rx7" secondAttribute="trailing" id="eLd-oH-RfI"/>
-                            <constraint firstItem="VLR-3I-0Mf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="pT4-UD-yra"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qlC-uM-KCG" secondAttribute="bottom" constant="8" symbolic="YES" id="rXw-aL-6GY"/>
                             <constraint firstItem="Kka-Uk-iDh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="tFE-aU-50s"/>
-                            <constraint firstItem="PPm-Xb-YH7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="uWI-8S-tuf"/>
-                            <constraint firstItem="VLR-3I-0Mf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="zfl-sa-Vzo"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="authenticateButton" destination="qlC-uM-KCG" id="Q0c-Pm-zfx"/>
-                        <outlet property="fenceNameLabel" destination="JlC-gJ-kUl" id="zXR-kJ-jwI"/>
                         <outlet property="mapView" destination="Kka-Uk-iDh" id="PXG-0B-jkM"/>
-                        <outlet property="stateLabel" destination="K0O-Rc-rx7" id="JyC-Cs-F43"/>
-                        <outlet property="zoneNameLabel" destination="6QW-zL-dVZ" id="Wyq-2J-7gi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="624" y="253"/>
+            <point key="canvasLocation" x="623.20000000000005" y="252.32383808095955"/>
         </scene>
     </scenes>
 </document>

@@ -8,6 +8,7 @@
 
 import Foundation
 import BDPointSDK
+import AirshipKit
 
 class BDUACustomEvent: UACustomEvent {
     convenience init(zone: BDZoneInfo, fence: BDFenceInfo!, customData: [AnyHashable : Any]?, dwellTime: UInt? = nil) {
@@ -29,15 +30,8 @@ class BDUACustomEvent: UACustomEvent {
     }
 }
 
-extension ViewController: BDPLocationDelegate {
+extension AppDelegate: BDPLocationDelegate {
     func didCheck(intoFence fence: BDFenceInfo!, inZone zoneInfo: BDZoneInfo!, atLocation location: BDLocationInfo!, willCheckOut: Bool, withCustomData customData: [AnyHashable : Any]!) {
-        
-        stateLabel.text = AppState.checkInTriggered.rawValue
-        
-        latestCheckIn = CheckIn(fenceName: fence.name,
-                                zoneName: zoneInfo.name,
-                                triggeredTime: location.timestamp,
-                                coordinate: CLLocationCoordinate2DMake(location.latitude, location.longitude))
 
         let event = BDUACustomEvent(zone: zoneInfo, fence: fence, customData: customData)
         event.track()
@@ -45,7 +39,6 @@ extension ViewController: BDPLocationDelegate {
     
     func didCheckOut(fromFence fence: BDFenceInfo!, inZone zoneInfo: BDZoneInfo!, on date: Date!, withDuration checkedInDuration: UInt, withCustomData customData: [AnyHashable : Any]!) {
         
-        stateLabel.text = AppState.checkOutTriggered.rawValue
         let event = BDUACustomEvent(zone: zoneInfo, fence: fence, customData: customData, dwellTime: checkedInDuration)
         event.track()
     }
