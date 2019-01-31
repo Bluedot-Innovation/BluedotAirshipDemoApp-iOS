@@ -6,7 +6,7 @@ target 'PointSDK-UrbanAirshipIntegrationExample-iOS' do
   use_frameworks!
 
   # Pods for UrbanAirshipSDKTest
-  pod "UrbanAirship-iOS-SDK", '~> 10.0'
-  pod "BluedotPointSDK", '~> 1.12.0'
+  pod "UrbanAirship-iOS-SDK", '~> 10.1.0'
+  pod "BluedotPointSDK", '~> 1.13.0'
 
 end
