@@ -45,8 +45,8 @@ class ViewController: UIViewController {
 extension ViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
         if case BDLocationManager.instance()?.authenticationState = BDAuthenticationState.notAuthenticated {
-            let span = MKCoordinateSpanMake((userLocation.location?.horizontalAccuracy ?? 0) / 30000, (userLocation.location?.verticalAccuracy ?? 0) / 30000)
-            mapView.setRegion(MKCoordinateRegionMake(userLocation.coordinate, span), animated: true)
+            let span = MKCoordinateSpan(latitudeDelta: (userLocation.location?.horizontalAccuracy ?? 0) / 30000, longitudeDelta: (userLocation.location?.verticalAccuracy ?? 0) / 30000)
+            mapView.setRegion(MKCoordinateRegion(center: userLocation.coordinate, span: span), animated: true)
         }
     }
 }
