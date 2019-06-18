@@ -34,7 +34,7 @@ class ViewController: UIViewController {
             BDLocationManager.instance()?.logOut()
             
         case .notAuthenticated:
-            BDLocationManager.instance()?.authenticate(withApiKey: apiKey)
+            BDLocationManager.instance()?.authenticate(withApiKey: apiKey, requestAuthorization: .authorizedAlways)
             
         default:
             return
