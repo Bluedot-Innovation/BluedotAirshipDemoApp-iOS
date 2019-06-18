@@ -128,12 +128,12 @@ BDLocationManager.instance()?.locationDelegate = instanceOfYourClass
 
 **Objective-C**
 ```objc
-[[BDLocationManager instance] authenticateWithApiKey: @"Bluedot API key"];
+[[BDLocationManager instance] authenticateWithApiKey: @"Bluedot API key" requestAuthorization: authorizedAlways];
 ```
 
 **Swift**
 ```swift
-BDLocationManager.instance()?.authenticate(withApiKey: "Bluedot API key")
+BDLocationManager.instance()?.authenticate(withApiKey: "Bluedot API key", requestAuthorization: .authorizedAlways)
 ```
 
 ### Implement `UrbanAirship-iOS-SDK`
