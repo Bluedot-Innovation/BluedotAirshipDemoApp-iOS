@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  UrbanAirshipSDKTest
+//  AirshipSDKTest
 //
 //  Created by Jason Xie on 11/05/2016.
 //  Copyright © 2016 Jason Xie. All rights reserved.
@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import BDPointSDK
 
-let ApiKeyProperty = "bluedotApiKey"
+let bluedotApiKey = "<<Your bluedot API Key here>>"
 
 class ViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
@@ -25,16 +25,13 @@ class ViewController: UIViewController {
     }
     
     @IBAction func authenticatePointSDK(_ sender: UIButton) {
-        guard let apiKey = Bundle.main.object(forInfoDictionaryKey: ApiKeyProperty) as? String else {
-            return
-        }
         
         switch BDLocationManager.instance()!.authenticationState {
         case .authenticated:
             BDLocationManager.instance()?.logOut()
             
         case .notAuthenticated:
-            BDLocationManager.instance()?.authenticate(withApiKey: apiKey, requestAuthorization: .authorizedAlways)
+            BDLocationManager.instance()?.authenticate(withApiKey: bluedotApiKey, requestAuthorization: .authorizedAlways)
             
         default:
             return

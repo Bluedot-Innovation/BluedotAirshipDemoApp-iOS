@@ -1,6 +1,6 @@
 //
 //  BDPLocationEvents.swift
-//  PointSDK-UrbanAirshipIntegrationExample-iOS
+//  BluedotAirshipDemoApp-iOS
 //
 //  Created by Pavel Oborin on 8/11/18.
 //  Copyright © 2018 Jason Xie. All rights reserved.

@@ -1,10 +1,10 @@
-# UrbanAirship Events Example
+# Airship Events Example
 
-A sample project used to test the integration between UrbanAirship SDK and Bluedot Point SDK.
+A sample project used to test the integration between Airship SDK and Bluedot Point SDK.
 
 ## Getting started
 
-This project depends on `BluedotPointSDK` and `UrbanAirship-iOS-SDK`. Both dependencies can be managed by Cocoapods. Please refer to the `Podfile` in the repository.
+This project depends on `BluedotPointSDK` and `Airship-iOS-SDK`. Both dependencies can be managed by Cocoapods. Please refer to the `Podfile` in the repository.
 
 ### Implement `BluedotPointSDK`
     
@@ -136,9 +136,9 @@ BDLocationManager.instance()?.locationDelegate = instanceOfYourClass
 BDLocationManager.instance()?.authenticate(withApiKey: "Bluedot API key", requestAuthorization: .authorizedAlways)
 ```
 
-### Implement `UrbanAirship-iOS-SDK`
+### Implement `Airship-iOS-SDK`
 
-1. Import `UrbanAirship-iOS-SDK` to your class
+1. Import `Airship-iOS-SDK` to your class
 
 **Objective-C**
 ```objc
@@ -150,7 +150,7 @@ BDLocationManager.instance()?.authenticate(withApiKey: "Bluedot API key", reques
 import AirshipKit
 ```
 
-2. Add `ArshipConfig.plist` to your project. Replace UrbanAirship `app keys` and `app secrets` with your keys.
+2. Add `ArshipConfig.plist` to your project. Replace Airship `app keys` and `app secrets` with your keys.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -160,18 +160,18 @@ import AirshipKit
 	<key>detectProvisioningMode</key>
 	<true/>
 	<key>developmentAppKey</key>
-	<string>UrbanAirship development app key</string>
+	<string>Airship development app key</string>
 	<key>developmentAppSecret</key>
-	<string>UrbanAirship development app secret</string>
+	<string>Airship development app secret</string>
 	<key>productionAppKey</key>
-	<string>UrbanAirship production app key</string>
+	<string>Airship production app key</string>
 	<key>productionAppSecret</key>
-	<string>UrbanAirship production app secret</string>
+	<string>Airship production app secret</string>
 </dict>
 </plist>
 ```
 
-3. Start `UrbanAirship`
+3. Start `Airship`
 
 **Objective-C**
 ```objc
@@ -183,7 +183,7 @@ import AirshipKit
 UAirship.takeOff()
 ```
 
-4. Track `UrbanAirship` events in your checkins/checkouts
+4. Track `Airship` events in your checkins/checkouts
 
 **Objective-C**
 ```objc
@@ -274,5 +274,5 @@ func didCheckOut(fromFence fence: BDFenceInfo!,
 ```
 
 ## Next steps
-Full documentation can be found at https://docs.bluedot.io/ios-sdk/ and https://docs.urbanairship.com/platform/ios/ respectivelly.
+Full documentation can be found at https://docs.bluedot.io/ios-sdk/ and https://docs.airship.com/platform/ios/ respectivelly.
 

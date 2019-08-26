@@ -5,12 +5,12 @@
 	<key>detectProvisioningMode</key>
 	<true/>
 	<key>developmentAppKey</key>
-	<string>&lt;&lt;UrbanAirship development app key&gt;&gt;</string>
+	<string>&lt;&lt;Airship development app key&gt;&gt;</string>
 	<key>developmentAppSecret</key>
-	<string>&lt;&lt;UrbanAirship development app secret&gt;&gt;</string>
+	<string>&lt;&lt;Airship development app secret&gt;&gt;</string>
 	<key>productionAppKey</key>
-	<string>&lt;&lt;UrbanAirship production app key&gt;&gt;</string>
+	<string>&lt;&lt;Airship production app key&gt;&gt;</string>
 	<key>productionAppSecret</key>
-	<string>&lt;&lt;UrbanAirship production app secret&gt;&gt;</string>
+	<string>&lt;&lt;Airship production app secret&gt;&gt;</string>
 </dict>
 </plist>
