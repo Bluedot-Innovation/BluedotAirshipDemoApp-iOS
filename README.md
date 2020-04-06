@@ -6,6 +6,16 @@ A sample project used to test the integration between Airship SDK and Bluedot Po
 
 This project depends on `BluedotPointSDK` and `Airship-iOS-SDK`. Both dependencies can be managed by Cocoapods. Please refer to the `Podfile` in the repository.
 
+
+### Pre-requisite
+Install git-lfs and lfs using the below commands:
+
+```
+brew install git-lfs
+
+git lfs install
+```
+
 ### Implement `BluedotPointSDK`
     
 1. import `BDPointSDK` to your class:
