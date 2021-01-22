@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PointSDK_UrbanAirshipIntegrationExample_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BluedotAirshipDemoApp_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -22,28 +20,46 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kka-Uk-iDh">
-                                <rect key="frame" x="16" y="28" width="343" height="593"/>
+                                <rect key="frame" x="16" y="8" width="343" height="536"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qlC-uM-KCG">
-                                <rect key="frame" x="143.5" y="629" width="88" height="30"/>
-                                <state key="normal" title="Authenticate"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qlC-uM-KCG" userLabel="InitializeButton">
+                                <rect key="frame" x="142.5" y="569" width="90" height="30"/>
+                                <state key="normal" title="Initialize SDK"/>
                                 <connections>
-                                    <action selector="authenticatePointSDK:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uDU-Kf-xde"/>
+                                    <action selector="initializeSDK:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PcL-p4-5NS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ain-Wn-JMI">
+                                <rect key="frame" x="212" y="607" width="133" height="30"/>
+                                <state key="normal" title="Stop GeoTriggering"/>
+                                <connections>
+                                    <action selector="stopGeoTriggering:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WaD-y6-I52"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B86-ld-cXh">
+                                <rect key="frame" x="32" y="607" width="134" height="30"/>
+                                <state key="normal" title="Start GeoTriggering"/>
+                                <connections>
+                                    <action selector="startGeoTriggering:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NEk-83-79P"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="qlC-uM-KCG" firstAttribute="top" secondItem="Kka-Uk-iDh" secondAttribute="bottom" constant="8" symbolic="YES" id="N6M-QA-pyd"/>
+                            <constraint firstItem="qlC-uM-KCG" firstAttribute="top" secondItem="Kka-Uk-iDh" secondAttribute="bottom" constant="25" id="N6M-QA-pyd"/>
                             <constraint firstItem="qlC-uM-KCG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OcC-b4-6uS"/>
                             <constraint firstItem="Kka-Uk-iDh" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="TWl-z4-BzL"/>
+                            <constraint firstItem="ain-Wn-JMI" firstAttribute="trailing" secondItem="Kka-Uk-iDh" secondAttribute="trailing" constant="-14" id="UmA-0X-Zix"/>
+                            <constraint firstItem="B86-ld-cXh" firstAttribute="top" secondItem="qlC-uM-KCG" secondAttribute="bottom" constant="8" symbolic="YES" id="b8a-hZ-HzN"/>
+                            <constraint firstItem="ain-Wn-JMI" firstAttribute="leading" secondItem="B86-ld-cXh" secondAttribute="trailing" constant="46" id="bvX-Iu-Syn"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Kka-Uk-iDh" secondAttribute="trailing" id="cll-Qh-yWc"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qlC-uM-KCG" secondAttribute="bottom" constant="8" symbolic="YES" id="rXw-aL-6GY"/>
+                            <constraint firstItem="B86-ld-cXh" firstAttribute="baseline" secondItem="ain-Wn-JMI" secondAttribute="baseline" id="kx1-jK-kK9"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qlC-uM-KCG" secondAttribute="bottom" constant="68" id="rXw-aL-6GY"/>
                             <constraint firstItem="Kka-Uk-iDh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="tFE-aU-50s"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="authenticateButton" destination="qlC-uM-KCG" id="Q0c-Pm-zfx"/>
+                        <outlet property="initializeSDKButton" destination="qlC-uM-KCG" id="liq-m6-S8k"/>
                         <outlet property="mapView" destination="Kka-Uk-iDh" id="PXG-0B-jkM"/>
                     </connections>
                 </viewController>

@@ -8,46 +8,42 @@
 
 import Foundation
 import BDPointSDK
-import AirshipKit
+import Airship
 
 class BDUACustomEvent: UACustomEvent {
-    convenience init(zone: BDZoneInfo, fence: BDFenceInfo!, customData: [AnyHashable : Any]?, dwellTime: UInt? = nil) {
+    convenience init(zone: BDZoneInfo, fence: BDFenceInfo!, dwellTime: UInt? = nil) {
         // 
         let name = dwellTime == nil ? "bluedot_place_entered" : "bluedot_place_exited"
         
         self.init(name: name)
         self.interactionType = "location"
         self.interactionID = zone.id
-        self.setStringProperty(zone.name, forKey: "bluedot_zone_name")
         
-        customData?.forEach { (elem) in
-            self.setStringProperty("\(elem.value)", forKey: "\(elem.key)")
+        var bluedotProperties = Dictionary<String, String>()
+        zone.customData?.forEach {
+            (key, value) in bluedotProperties[key] = value
         }
-        
+        bluedotProperties["bluedot_zone_name"] = zone.name
+
         if let dwellTime = dwellTime {
-            self.setNumberProperty(NSNumber(value: dwellTime), forKey: "dwell_time")
+            bluedotProperties["dwell_time"] = NSNumber(value: dwellTime).stringValue
         }
+        
+        self.properties = bluedotProperties
     }
 }
 
-extension AppDelegate: BDPLocationDelegate {
-    func didCheck(intoFence fence: BDFenceInfo!, inZone zoneInfo: BDZoneInfo!, atLocation location: BDLocationInfo!, willCheckOut: Bool, withCustomData customData: [AnyHashable : Any]!) {
-
-        let event = BDUACustomEvent(zone: zoneInfo, fence: fence, customData: customData)
+extension AppDelegate: BDPGeoTriggeringEventDelegate {
+    
+    func didEnterZone(_ enterEvent: BDZoneEntryEvent) {
+        print("Entered zone: \(String(describing: enterEvent.zone().name))")
+        let event = BDUACustomEvent(zone: enterEvent.zone(), fence: enterEvent.fence)
         event.track()
     }
     
-    func didCheckOut(fromFence fence: BDFenceInfo!, inZone zoneInfo: BDZoneInfo!, on date: Date!, withDuration checkedInDuration: UInt, withCustomData customData: [AnyHashable : Any]!) {
-        
-        let event = BDUACustomEvent(zone: zoneInfo, fence: fence, customData: customData, dwellTime: checkedInDuration)
+    func didExitZone(_ exitEvent: BDZoneExitEvent) {
+        print("Exited zone: \(String(describing: exitEvent.zone().name))")
+        let event = BDUACustomEvent(zone: exitEvent.zone(), fence: exitEvent.fence, dwellTime: exitEvent.duration)
         event.track()
-    }
-    
-    func didCheck(intoBeacon beacon: BDBeaconInfo!, inZone zoneInfo: BDZoneInfo!, atLocation locationInfo: BDLocationInfo!, with proximity: CLProximity, willCheckOut: Bool, withCustomData customData: [AnyHashable : Any]!) {
-        
-    }
-    
-    func didCheckOut(fromBeacon beacon: BDBeaconInfo!, inZone zoneInfo: BDZoneInfo!, with proximity: CLProximity, on date: Date!, withDuration checkedInDuration: UInt, withCustomData customData: [AnyHashable : Any]!) {
-        
     }
 }

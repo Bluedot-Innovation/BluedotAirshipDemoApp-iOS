@@ -60,7 +60,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>bluedotApiKey</key>
-	<string>&lt;&lt;Entrer your API key&gt;&gt;</string>
 </dict>
 </plist>
