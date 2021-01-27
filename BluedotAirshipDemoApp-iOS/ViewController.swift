@@ -10,66 +10,60 @@ import UIKit
 import MapKit
 import BDPointSDK
 
-let bluedotApiKey = "<<Your bluedot API Key here>>"
+let bluedotProjectId = "YourProjectId"
 
 class ViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
-    @IBOutlet weak var authenticateButton: UIButton!
+    @IBOutlet weak var initializeSDKButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         mapView.delegate = self
-        
-        BDLocationManager.instance()?.sessionDelegate = self
     }
     
-    @IBAction func authenticatePointSDK(_ sender: UIButton) {
-        
-        switch BDLocationManager.instance()!.authenticationState {
-        case .authenticated:
-            BDLocationManager.instance()?.logOut()
-            
-        case .notAuthenticated:
-            BDLocationManager.instance()?.authenticate(withApiKey: bluedotApiKey, requestAuthorization: .authorizedAlways)
-            
-        default:
-            return
+    @IBAction func startGeoTriggering(_ sender: UIButton) {
+        BDLocationManager.instance()?.startGeoTriggering() {
+            error in
+            guard error == nil else {
+                print("Bluedot Point SDK: Start GeoTriggering Error: \(String(describing: error?.localizedDescription))")
+                return
+            }
+            print( "Bluedot Point SDK - GeoTriggering started" )
         }
     }
+    
+    @IBAction func stopGeoTriggering(_ sender: UIButton) {
+        BDLocationManager.instance()?.stopGeoTriggering() {
+            error in
+            guard error == nil else {
+                print("Bluedot Point SDK: Stop GeoTriggering Error: \(String(describing: error?.localizedDescription))")
+                return
+            }
+            print( "Bluedot Point SDK - GeoTriggering stopped" )
+        }
+    }
+    
+    @IBAction func initializeSDK(_ sender: UIButton) {
+        if BDLocationManager.instance()?.isInitialized() == false {
+            BDLocationManager.instance()?.initialize(
+                withProjectId: bluedotProjectId) { error in
+                guard error == nil else {
+                    print("Bluedot Point SDK: Initialisation Error: \(String(describing: error?.localizedDescription))")
+                    return
+                }
+                print( "Bluedot Point SDK: Initialised successfully with SDK" )
+                BDLocationManager.instance()?.requestAlwaysAuthorization()
+            }
+        }
+    }
+    
+    
 }
 
 extension ViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
-        if case BDLocationManager.instance()?.authenticationState = BDAuthenticationState.notAuthenticated {
-            let span = MKCoordinateSpan(latitudeDelta: (userLocation.location?.horizontalAccuracy ?? 0) / 30000, longitudeDelta: (userLocation.location?.verticalAccuracy ?? 0) / 30000)
-            mapView.setRegion(MKCoordinateRegion(center: userLocation.coordinate, span: span), animated: true)
+        if case BDLocationManager.instance()?.isInitialized() = false {
+            mapView.setCenter(CLLocationCoordinate2D(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude), animated: true)
         }
-    }
-}
-
-extension ViewController: BDPointDelegate {
-    func willAuthenticate(withApiKey apiKey: String!) {
-        
-    }
-    
-    func authenticationWasSuccessful() {
-        authenticateButton.setTitle("Logout", for: .normal)
-    }
-    
-    func authenticationWasDenied(withReason reason: String!) {
-        authenticateButton.setTitle("Authenticate", for: .normal)
-    }
-    
-    func authenticationFailedWithError(_ error: Error!) {
-        authenticateButton.setTitle("Authenticate", for: .normal)
-    }
-    
-    func didEndSession() {
-        authenticateButton.setTitle("Authenticate", for: .normal)
-    }
-    
-    func didEndSessionWithError(_ error: Error!) {
-        authenticateButton.setTitle("Authenticate", for: .normal)
     }
 }

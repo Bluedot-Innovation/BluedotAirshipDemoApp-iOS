@@ -8,7 +8,7 @@
 
 import UIKit
 import BDPointSDK
-import AirshipKit
+import Airship
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,7 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         // Override point for customization after application launch.
         
-        BDLocationManager.instance()?.locationDelegate = self
+        BDLocationManager.instance()?.geoTriggeringEventDelegate = self
+        BDLocationManager.instance()?.requestWhenInUseAuthorization()
         
         UAirship.takeOff()
         UAirship.push().userPushNotificationsEnabled = true
