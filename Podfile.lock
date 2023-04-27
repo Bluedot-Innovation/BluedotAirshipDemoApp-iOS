@@ -1,0 +1,34 @@
+PODS:
+  - Airship (16.11.3):
+    - Airship/Automation (= 16.11.3)
+    - Airship/Basement (= 16.11.3)
+    - Airship/Core (= 16.11.3)
+    - Airship/ExtendedActions (= 16.11.3)
+    - Airship/MessageCenter (= 16.11.3)
+  - Airship/Automation (16.11.3):
+    - Airship/Core
+  - Airship/Basement (16.11.3)
+  - Airship/Core (16.11.3):
+    - Airship/Basement
+  - Airship/ExtendedActions (16.11.3):
+    - Airship/Core
+  - Airship/MessageCenter (16.11.3):
+    - Airship/Core
+  - BluedotPointSDK (15.6.7)
+
+DEPENDENCIES:
+  - Airship
+  - BluedotPointSDK
+
+SPEC REPOS:
+  trunk:
+    - Airship
+    - BluedotPointSDK
+
+SPEC CHECKSUMS:
+  Airship: c70eed50e429f97f5adb285423c7291fb7a032ae
+  BluedotPointSDK: 9e88bda0f6b76839bcca15c85b27155e385ed72f
+
+PODFILE CHECKSUM: 61a39ae3a5aafea647e7b53d0144eeae037342a3
+
+COCOAPODS: 1.12.0

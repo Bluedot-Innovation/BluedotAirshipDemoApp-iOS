@@ -17,272 +17,168 @@ git lfs install
 ```
 
 ### Implement `BluedotPointSDK`
-    
-1. import `BDPointSDK` to your class:
+
+1. Follow official [Bluedot documentation](https://docs.bluedot.io/ios-sdk/ios-quick-start/) to integrate Bluedot iOS PointSDK into your app.
+
+2. Update value of `bluedotProjectId` inside `ViewController` class to your projectId from Bluedot Canvas
+
+3. Start `PointSDK`'s initialization + geoTriggering service. See `initializeSDK()` function in `ViewController` class. 
+
+4. Implement `BDPGeoTriggeringEventDelegate` to handle check-in, check-out events:
 
 **Objective-C**
 ```objc
-@import BDPointSDK;
-```
-
-**Swift**
-```swift
-import BDPointSDK
-```
-
-2. Implement Bluedot location delegate:
-
-**Objective-C**
-```objc
-@interface YourClass () <BDPLocationDelegate>
+@interface YourClass () <BDPGeoTriggeringEventDelegate>
     ...
 @end
 
 @implementation YourClass
 ...
 
-- (void)didCheckIntoFence:(BDFenceInfo *)fence
-                   inZone:(BDZoneInfo *)zoneInfo
-               atLocation:(BDLocationInfo *)location
-             willCheckOut:(BOOL)willCheckOut
-           withCustomData:(NSDictionary *)customData {
+- (void)didEnterZone:(nonnull GeoTriggerEvent *)enterEvent {
     // your logic on checkin
 }
 
-- (void)didCheckOutFromFence: (BDFenceInfo *)fence
-                      inZone: (BDZoneInfo *)zoneInfo
-                      onDate: (NSDate *)date
-                withDuration: (NSUInteger)duration
-              withCustomData: (NSDictionary *)customData {
+- (void)didExitZone:(nonnull GeoTriggerEvent *)exitEvent {
     // your logic after checkout
 }
 
-// Beacons checkin/checkout. This is optional, unless beacons are used
-- (void)didCheckIntoBeacon: (BDBeaconInfo *)beacon
-                    inZone: (BDZoneInfo *)zoneInfo
-                atLocation: (BDLocationInfo *)locationInfo
-             withProximity: (CLProximity)proximity
-              willCheckOut: (BOOL)willCheckOut
-            withCustomData: (NSDictionary *)customData {
-    / your logic on checkin
-}
-
-- (void)didCheckOutFromBeacon: (BDBeaconInfo *)beacon
-                   inZone: (BDZoneInfo *)zoneInfo
-            withProximity: (CLProximity)proximity
-                   onDate: (NSDate *)date
-             withDuration: (NSUInteger)duration
-           withCustomData: (NSDictionary *)customData {
-    // your logic after checkout
-}
 @end
 ```
 
 **Swift**
 ```swift
-class YourClass: BDPLocationDelegate {
-    ...
+extension YourClass: BDPGeoTriggeringEventDelegate {
 
-    func didCheck(intoFence fence: BDFenceInfo!, 
-                  inZone zoneInfo: BDZoneInfo!, 
-                  atLocation location: BDLocationInfo!, 
-                  willCheckOut: Bool, 
-                  withCustomData customData: [AnyHashable : Any]!) {
-        // your logic on checkin
-    }
-
-    func didCheckOut(fromFence fence: BDFenceInfo!, 
-                     inZone zoneInfo: BDZoneInfo!, 
-                     on date: Date!, 
-                     withDuration checkedInDuration: UInt, 
-                     withCustomData customData: [AnyHashable : Any]!) {
-        // your logic after checkout
-    }
-
-    // Beacons checkin/checkout. This is optional, unless beacons are used
-    func didCheck(intoBeacon beacon: BDBeaconInfo!, 
-                  inZone zoneInfo: BDZoneInfo!, 
-                  atLocation locationInfo: BDLocationInfo!, 
-                  with proximity: CLProximity, 
-                  willCheckOut: Bool, 
-                  withCustomData customData: [AnyHashable : Any]!) {
+    func didEnterZone(_ enterEvent: BDZoneEntryEvent) {
         // your logic on checkin
     }
     
-    func didCheckOut(fromBeacon beacon: BDBeaconInfo!, 
-                     inZone zoneInfo: BDZoneInfo!, 
-                     with proximity: CLProximity, 
-                     on date: Date!, 
-                     withDuration checkedInDuration: UInt, 
-                     withCustomData customData: [AnyHashable : Any]!) {
+    func didExitZone(_ exitEvent: BDZoneExitEvent) {
         // your logic after checkout
     }
 }
 ```
 
-3. Assign location delegate with your implementation
+3. Assign the delegate to your class
 
 **Objective-C**
 ```objc
 YourClass *instanceOfYourClass = [[YourClass alloc] init];
-BDLocationManager.instance.locationDelegate = instanceOfYourClass;
+BDLocationManager.instance.geoTriggeringEventDelegate = instanceOfYourClass;
 ```
 
 **Swift**
 ```swift
 let instanceOfYourClass = YourClass()
-BDLocationManager.instance()?.locationDelegate = instanceOfYourClass
-```
-
-4. Authenticate with the Bluedot services
-
-**Objective-C**
-```objc
-[[BDLocationManager instance] authenticateWithApiKey: @"Bluedot API key" requestAuthorization: authorizedAlways];
-```
-
-**Swift**
-```swift
-BDLocationManager.instance()?.authenticate(withApiKey: "Bluedot API key", requestAuthorization: .authorizedAlways)
+BDLocationManager.instance()?.geoTriggeringEventDelegate = instanceOfYourClass
 ```
 
 ### Implement `Airship-iOS-SDK`
 
-1. Import `Airship-iOS-SDK` to your class
+1. Follow official [Airship documentation](https://docs.airship.com/platform/mobile/setup/sdk/ios/) to integrate Airship iOS SDK into your app.
+Please note that Airship has to be initialized before sending any Bluedot check-in/check-out events.
+
+2. Update Airship configurations in Application's `didFinishLaunchingWithOptions:` method as per your Airship setup: development/production app key/secret, US/EU site, notification settings...
 
 **Objective-C**
 ```objc
-@import AirshipKit;
-```
-
-**Swift**
-```swift
-import AirshipKit
-```
-
-2. Add `ArshipConfig.plist` to your project. Replace Airship `app keys` and `app secrets` with your keys.
-
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>detectProvisioningMode</key>
-	<true/>
-	<key>developmentAppKey</key>
-	<string>Airship development app key</string>
-	<key>developmentAppSecret</key>
-	<string>Airship development app secret</string>
-	<key>productionAppKey</key>
-	<string>Airship production app key</string>
-	<key>productionAppSecret</key>
-	<string>Airship production app secret</string>
-</dict>
-</plist>
-```
-
-3. Start `Airship`
-
-**Objective-C**
-```objc
-[UAirship takeOff];
-```
-
-**Swift**
-```swift
-UAirship.takeOff()
-```
-
-4. Track `Airship` events in your checkins/checkouts
-
-**Objective-C**
-```objc
-- (void)didCheckIntoFence:(BDFenceInfo *)fence
-                   inZone:(BDZoneInfo *)zoneInfo
-               atLocation:(BDLocationInfo *)location
-             willCheckOut:(BOOL)willCheckOut
-           withCustomData:(NSDictionary *)customData
-{
-    UACustomEvent *customEvent = [UACustomEvent eventWithName:@"bluedot_place_entered"];
-    customEvent.interactionType = @"location";
-    customEvent.interactionID = zoneInfo.ID;
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    ...
     
-    // Set custom event properties
-    [customEvent setStringProperty:zoneInfo.name forKey:@"bluedot_zone_name"];
-    for (NSString *key in customData.allKeys) {
-        [customEvent setStringProperty:customData[key] forKey:key];
-    }
-    
-    // Record the event in analytics
-    [customEvent track];
-}
+    UAConfig *config = [UAConfig config];
+    config.developmentAppKey = @"YOUR DEV APP KEY";
+    config.developmentAppSecret = @"YOUR DEV APP SECRET";
+    config.productionAppKey = @"YOUR PRODUCTION APP KEY";
+    config.productionAppSecret = @"YOUR PRODUCTION APP SECRET";
+    config.site = UASiteUS;
+    config.URLAllowListScopeOpenURL = YES;
+    config.URLAllowList = @[@"*"];
 
-- (void)didCheckOutFromFence: (BDFenceInfo *)fence
-                      inZone: (BDZoneInfo *)zoneInfo
-                      onDate: (NSDate *)date
-                withDuration: (NSUInteger)duration
-              withCustomData: (NSDictionary *)customData
-{
-    UACustomEvent *customEvent = [UACustomEvent eventWithName:@"bluedot_place_exited"];
-    customEvent.interactionType = @"location";
-    customEvent.interactionID = zoneInfo.ID;
+    [UAirship takeOff:config launchOptions:launchOptions];
+    [UAirship push].userPushNotificationsEnabled = YES;
     
-    // Set custom event properties
-    [customEvent setStringProperty:zoneInfo.name forKey:@"bluedot_zone_name"];
-    for (NSString *key in customData.allKeys) {
-        [customEvent setStringProperty:customData[key] forKey:key];
-    }
-    [customEvent setNumberProperty:@(duration) forKey:@"dwell_time"];
-    
-    // Record the event in analytics
-    [customEvent track];
+    ...
 }
 ```
 
 **Swift**
 ```swift
-func didCheck(intoFence fence: BDFenceInfo!, 
-              inZone zoneInfo: BDZoneInfo!, 
-              atLocation location: BDLocationInfo!, 
-              willCheckOut: Bool, 
-              withCustomData customData: [AnyHashable : Any]!) {
-    let customEvent = UACustomEvent(name: "bluedot_place_entered")
-    customEvent.interactionType = "location"
-    customEvent.interactionID = zone.id
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+    ...
+    
+    // Create Airship config
+    let config = Config()
 
-    // Set custom event properties
-    customEvent.setStringProperty(zone.name, forKey: "bluedot_zone_name")  
-    customData?.forEach { (elem) in
-        customEvent.setStringProperty("\(elem.value)", forKey: "\(elem.key)")
-    }
+    // Set production and development separately.
+    // Alternatively you can use AirshipConfig.plist file to store all Airship configurations. More details please see https://docs.airship.com/platform/mobile/setup/sdk/ios/
+    config.developmentAppKey = "YOUR DEV APP KEY"
+    config.developmentAppSecret = "YOUR DEV APP SECRET"
 
-    // Record the event in analytics
-    customEvent.track()
+    config.productionAppKey = "YOUR PRODUCTION APP KEY"
+    config.productionAppSecret = "YOUR PRODUCTION APP SECRET"
+
+    // Set site. Either .us or .eu
+    config.site = .us
+
+    // Allow lists. User * to allow anything
+    config.urlAllowList = ["*"]
+
+    // Call takeOff
+    Airship.takeOff(config, launchOptions: launchOptions)
+
+    Airship.push.userPushNotificationsEnabled = true
+    
+    ...
 }
 
-func didCheckOut(fromFence fence: BDFenceInfo!, 
-                 inZone zoneInfo: BDZoneInfo!, 
-                 on date: Date!, 
-                 withDuration checkedInDuration: UInt, 
-                 withCustomData customData: [AnyHashable : Any]!) {
-    let customEvent = UACustomEvent(name: "bluedot_place_exited")
-    customEvent.interactionType = "location"
-    customEvent.interactionID = zone.id
+```
 
-    // Set custom event properties
-    customEvent.setStringProperty(zone.name, forKey: "bluedot_zone_name")
-    customData?.forEach { (elem) in
-        customEvent.setStringProperty("\(elem.value)", forKey: "\(elem.key)")
-    }
-    if let dwellTime = dwellTime {
-        customEvent.setNumberProperty(NSNumber(value: dwellTime), forKey: "dwell_time")
-    }
+3. Track custom `Airship` events in your checkins/checkouts. See code examples in `AppDelegate+BDPLocationEvents.swift` class.
 
-    // Record the event in analytics
-    customEvent.track()
+**Objective-C**
+```objc
+@interface YourClass () <BDPGeoTriggeringEventDelegate>
+    ...
+@end
+
+@implementation YourClass
+...
+
+- (void)didEnterZone:(nonnull GeoTriggerEvent *)enterEvent {
+    NSLog(@"Entered zone: %@", enterEvent.zone.name);
+    CustomEvent *event = [[CustomEvent alloc] initWithZone:enterEvent.zone fence:enterEvent.fence];
+    [event track];
+}
+
+- (void)didExitZone:(nonnull GeoTriggerEvent *)exitEvent {
+    NSLog(@"Exited zone: %@", exitEvent.zone.name);
+    CustomEvent *event = [[CustomEvent alloc] initWithZone:exitEvent.zone fence:exitEvent.fence dwellTime:exitEvent.duration];
+    [event track];
+}
+
+@end
+```
+
+**Swift**
+```swift
+extension YourClass: BDPGeoTriggeringEventDelegate {
+
+    func didEnterZone(_ enterEvent: BDZoneEntryEvent) {
+        print("Entered zone: \(String(describing: enterEvent.zone().name))")
+        let event = CustomEvent(zone: enterEvent.zone(), fence: enterEvent.fence)
+        event.track()
+    }
+    
+    func didExitZone(_ exitEvent: BDZoneExitEvent) {
+        print("Exited zone: \(String(describing: exitEvent.zone().name))")
+        let event = CustomEvent(zone: exitEvent.zone(), fence: exitEvent.fence, dwellTime: exitEvent.duration)
+        event.track()
+    }
 }
 ```
+
 
 ## Next steps
-Full documentation can be found at https://docs.bluedot.io/ios-sdk/ and https://docs.airship.com/platform/ios/ respectivelly.
+Full documentation can be found at https://docs.bluedot.io/ios-sdk/ and https://docs.airship.com/platform/mobile/setup/sdk/ios/ respectivelly.
 
