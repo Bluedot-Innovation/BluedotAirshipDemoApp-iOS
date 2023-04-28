@@ -13,7 +13,7 @@ extension CustomEvent {
         // here are just examples to log custom events to Airship when checkin and checkout happen
         let name = dwellTime == nil ? "bluedot_place_entered" : "bluedot_place_exited"
         
-        self.init(name: name, stringValue: zone.id)
+        self.init(name: name)
         self.interactionType = "location"
         self.interactionID = zone.id
         
