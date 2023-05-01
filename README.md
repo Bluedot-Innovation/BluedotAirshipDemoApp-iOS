@@ -8,9 +8,10 @@ This project depends on `BluedotPointSDK` and `Airship-iOS-SDK`. Both dependenci
 
 
 ### Pre-requisite
+
 Install git-lfs and lfs using the below commands:
 
-```
+```bash
 brew install git-lfs
 
 git lfs install
@@ -60,15 +61,17 @@ extension YourClass: BDPGeoTriggeringEventDelegate {
 }
 ```
 
-3. Assign the delegate to your class
+5. Assign the delegate to your class
 
 **Objective-C**
+
 ```objc
 YourClass *instanceOfYourClass = [[YourClass alloc] init];
 BDLocationManager.instance.geoTriggeringEventDelegate = instanceOfYourClass;
 ```
 
 **Swift**
+
 ```swift
 let instanceOfYourClass = YourClass()
 BDLocationManager.instance()?.geoTriggeringEventDelegate = instanceOfYourClass
@@ -82,6 +85,7 @@ Please note that Airship has to be initialized before sending any Bluedot check-
 2. Update Airship configurations in Application's `didFinishLaunchingWithOptions:` method as per your Airship setup: development/production app key/secret, US/EU site, notification settings...
 
 **Objective-C**
+
 ```objc
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     ...
@@ -137,6 +141,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 3. Track custom `Airship` events in your checkins/checkouts. See code examples in `AppDelegate+BDPLocationEvents.swift` class.
 
 **Objective-C**
+
 ```objc
 @interface YourClass () <BDPGeoTriggeringEventDelegate>
     ...
@@ -178,7 +183,6 @@ extension YourClass: BDPGeoTriggeringEventDelegate {
 }
 ```
 
+## More Details
 
-## Next steps
-Full documentation can be found at https://docs.bluedot.io/ios-sdk/ and https://docs.airship.com/platform/mobile/setup/sdk/ios/ respectivelly.
-
+Full documentation about Bluedot And Airship integration can be found at https://docs.bluedot.io/integrations/airship-integration/.
