@@ -1,18 +1,16 @@
 //
-//  BDPLocationEvents.swift
+//  AppDelegate+BDPLocationEvents.swift
 //  BluedotAirshipDemoApp-iOS
-//
-//  Created by Pavel Oborin on 8/11/18.
-//  Copyright © 2018 Jason Xie. All rights reserved.
 //
 
 import Foundation
 import BDPointSDK
-import Airship
+import AirshipKit
 
-class BDUACustomEvent: UACustomEvent {
+extension CustomEvent {
     convenience init(zone: BDZoneInfo, fence: BDFenceInfo!, dwellTime: UInt? = nil) {
-        // 
+        // Can customize to any event name or attribute
+        // here are just examples to log custom events to Airship when checkin and checkout happen
         let name = dwellTime == nil ? "bluedot_place_entered" : "bluedot_place_exited"
         
         self.init(name: name)
@@ -37,13 +35,13 @@ extension AppDelegate: BDPGeoTriggeringEventDelegate {
     
     func didEnterZone(_ enterEvent: BDZoneEntryEvent) {
         print("Entered zone: \(String(describing: enterEvent.zone().name))")
-        let event = BDUACustomEvent(zone: enterEvent.zone(), fence: enterEvent.fence)
+        let event = CustomEvent(zone: enterEvent.zone(), fence: enterEvent.fence)
         event.track()
     }
     
     func didExitZone(_ exitEvent: BDZoneExitEvent) {
         print("Exited zone: \(String(describing: exitEvent.zone().name))")
-        let event = BDUACustomEvent(zone: exitEvent.zone(), fence: exitEvent.fence, dwellTime: exitEvent.duration)
+        let event = CustomEvent(zone: exitEvent.zone(), fence: exitEvent.fence, dwellTime: exitEvent.duration)
         event.track()
     }
 }

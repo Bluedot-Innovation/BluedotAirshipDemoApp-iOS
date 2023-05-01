@@ -2,13 +2,10 @@
 //  AppDelegate.swift
 //  AirshipSDKTest
 //
-//  Created by Jason Xie on 11/05/2016.
-//  Copyright © 2016 Jason Xie. All rights reserved.
-//
 
 import UIKit
 import BDPointSDK
-import Airship
+import AirshipKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,8 +18,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         BDLocationManager.instance()?.geoTriggeringEventDelegate = self
         BDLocationManager.instance()?.requestWhenInUseAuthorization()
         
-        UAirship.takeOff()
-        UAirship.push().userPushNotificationsEnabled = true
+        
+        // Create Airship config
+        let config = Config()
+        
+        // Set production and development separately.
+        // Alternatively you can use AirshipConfig.plist file to store all Airship configurations. More details please see https://docs.airship.com/platform/mobile/setup/sdk/ios/
+        config.developmentAppKey = "YOUR DEV APP KEY"
+        config.developmentAppSecret = "YOUR DEV APP SECRET"
+        
+        config.productionAppKey = "YOUR PRODUCTION APP KEY"
+        config.productionAppSecret = "YOUR PRODUCTION APP SECRET"
+        
+        // Set site. Either .us or .eu
+        config.site = .us
+        
+        // Allow lists. User * to allow anything
+        config.urlAllowList = ["*"]
+        
+        // Call takeOff
+        Airship.takeOff(config, launchOptions: launchOptions)
+        
+        Airship.push.userPushNotificationsEnabled = true
         
         return true
     }
