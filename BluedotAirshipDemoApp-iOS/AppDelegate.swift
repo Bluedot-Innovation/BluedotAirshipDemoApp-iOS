@@ -5,7 +5,7 @@
 
 import UIKit
 import BDPointSDK
-import AirshipKit
+import AirshipCore
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,12 +20,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         // Create Airship config
-        let config = Config()
+        let config = AirshipConfig()
         
         // Set production and development separately.
         // Alternatively you can use AirshipConfig.plist file to store all Airship configurations. More details please see https://docs.airship.com/platform/mobile/setup/sdk/ios/
-        config.developmentAppKey = "YOUR DEV APP KEY"
-        config.developmentAppSecret = "YOUR DEV APP SECRET"
+        config.developmentAppKey = "Airship Development App Key" // Should be taken from Airship Project Settings -> Project Details -> APP KEY
+        config.developmentAppSecret = "Airship Development App Secret" // Should be taken from Airship Project Settings -> Project Details -> SECRET
         
         config.productionAppKey = "YOUR PRODUCTION APP KEY"
         config.productionAppSecret = "YOUR PRODUCTION APP SECRET"
