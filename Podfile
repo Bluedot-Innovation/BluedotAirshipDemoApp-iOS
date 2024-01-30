@@ -6,7 +6,6 @@ target 'BluedotAirshipDemoApp-iOS' do
   use_frameworks!
 
   # Pods
-  pod "Airship"
   pod "BluedotPointSDK"
 
 end

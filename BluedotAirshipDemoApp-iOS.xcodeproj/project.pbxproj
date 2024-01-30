@@ -21,6 +21,11 @@
 		9A36A26C1CE3F81F00AF1A7F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A36A2651CE3F81F00AF1A7F /* SystemConfiguration.framework */; };
 		9A36A26D1CE3F81F00AF1A7F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A36A2661CE3F81F00AF1A7F /* UIKit.framework */; };
 		9A36A26F1CE3F9DD00AF1A7F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A36A26E1CE3F9DD00AF1A7F /* AudioToolbox.framework */; };
+		E1A68EF02B5A07FF000D4810 /* AirshipAutomation in Frameworks */ = {isa = PBXBuildFile; productRef = E1A68EEF2B5A07FF000D4810 /* AirshipAutomation */; };
+		E1A68EF22B5A07FF000D4810 /* AirshipCore in Frameworks */ = {isa = PBXBuildFile; productRef = E1A68EF12B5A07FF000D4810 /* AirshipCore */; };
+		E1A68EF42B5A07FF000D4810 /* AirshipDebug in Frameworks */ = {isa = PBXBuildFile; productRef = E1A68EF32B5A07FF000D4810 /* AirshipDebug */; };
+		E1A68EF62B5A07FF000D4810 /* AirshipFeatureFlags in Frameworks */ = {isa = PBXBuildFile; productRef = E1A68EF52B5A07FF000D4810 /* AirshipFeatureFlags */; };
+		E1A68EF82B5A07FF000D4810 /* AirshipMessageCenter in Frameworks */ = {isa = PBXBuildFile; productRef = E1A68EF72B5A07FF000D4810 /* AirshipMessageCenter */; };
 		E1DDC1932193C68E0002AAA9 /* AppDelegate+BDPLocationEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DDC1922193C68E0002AAA9 /* AppDelegate+BDPLocationEvents.swift */; };
 		FEAF6A8242F2DEEDB6197936 /* Pods_BluedotAirshipDemoApp_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3FA2E22BFE7F0FF4B6CB881 /* Pods_BluedotAirshipDemoApp_iOS.framework */; };
 /* End PBXBuildFile section */
@@ -67,14 +72,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1A68EF22B5A07FF000D4810 /* AirshipCore in Frameworks */,
 				9A36A26F1CE3F9DD00AF1A7F /* AudioToolbox.framework in Frameworks */,
+				E1A68EF82B5A07FF000D4810 /* AirshipMessageCenter in Frameworks */,
 				9A36A2671CE3F81F00AF1A7F /* AVFoundation.framework in Frameworks */,
 				9A36A2681CE3F81F00AF1A7F /* CoreGraphics.framework in Frameworks */,
 				9A36A2691CE3F81F00AF1A7F /* CoreLocation.framework in Frameworks */,
 				9A36A26A1CE3F81F00AF1A7F /* CoreMotion.framework in Frameworks */,
 				9A36A26B1CE3F81F00AF1A7F /* MapKit.framework in Frameworks */,
+				E1A68EF42B5A07FF000D4810 /* AirshipDebug in Frameworks */,
 				9A36A26C1CE3F81F00AF1A7F /* SystemConfiguration.framework in Frameworks */,
 				9A36A26D1CE3F81F00AF1A7F /* UIKit.framework in Frameworks */,
+				E1A68EF02B5A07FF000D4810 /* AirshipAutomation in Frameworks */,
+				E1A68EF62B5A07FF000D4810 /* AirshipFeatureFlags in Frameworks */,
 				FEAF6A8242F2DEEDB6197936 /* Pods_BluedotAirshipDemoApp_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -161,6 +171,13 @@
 			dependencies = (
 			);
 			name = "BluedotAirshipDemoApp-iOS";
+			packageProductDependencies = (
+				E1A68EEF2B5A07FF000D4810 /* AirshipAutomation */,
+				E1A68EF12B5A07FF000D4810 /* AirshipCore */,
+				E1A68EF32B5A07FF000D4810 /* AirshipDebug */,
+				E1A68EF52B5A07FF000D4810 /* AirshipFeatureFlags */,
+				E1A68EF72B5A07FF000D4810 /* AirshipMessageCenter */,
+			);
 			productName = UrbanAirshipSDKTest;
 			productReference = 9A36A1F81CE2C76000AF1A7F /* BluedotAirshipDemoApp-iOS.app */;
 			productType = "com.apple.product-type.application";
@@ -196,6 +213,9 @@
 				Base,
 			);
 			mainGroup = 9A36A1EF1CE2C76000AF1A7F;
+			packageReferences = (
+				E1A68EEE2B5A07FF000D4810 /* XCRemoteSwiftPackageReference "ios-library" */,
+			);
 			productRefGroup = 9A36A1F91CE2C76000AF1A7F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -433,12 +453,14 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9H7C75E224;
 				ENABLE_BITCODE = NO;
+				EXCLUDED_ARCHS = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/PointSDK/include",
 				);
 				INFOPLIST_FILE = "BluedotAirshipDemoApp-iOS/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -466,12 +488,14 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9H7C75E224;
 				ENABLE_BITCODE = NO;
+				EXCLUDED_ARCHS = "";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/PointSDK/include",
 				);
 				INFOPLIST_FILE = "BluedotAirshipDemoApp-iOS/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -510,6 +534,45 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E1A68EEE2B5A07FF000D4810 /* XCRemoteSwiftPackageReference "ios-library" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/urbanairship/ios-library";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 17.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E1A68EEF2B5A07FF000D4810 /* AirshipAutomation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E1A68EEE2B5A07FF000D4810 /* XCRemoteSwiftPackageReference "ios-library" */;
+			productName = AirshipAutomation;
+		};
+		E1A68EF12B5A07FF000D4810 /* AirshipCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E1A68EEE2B5A07FF000D4810 /* XCRemoteSwiftPackageReference "ios-library" */;
+			productName = AirshipCore;
+		};
+		E1A68EF32B5A07FF000D4810 /* AirshipDebug */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E1A68EEE2B5A07FF000D4810 /* XCRemoteSwiftPackageReference "ios-library" */;
+			productName = AirshipDebug;
+		};
+		E1A68EF52B5A07FF000D4810 /* AirshipFeatureFlags */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E1A68EEE2B5A07FF000D4810 /* XCRemoteSwiftPackageReference "ios-library" */;
+			productName = AirshipFeatureFlags;
+		};
+		E1A68EF72B5A07FF000D4810 /* AirshipMessageCenter */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E1A68EEE2B5A07FF000D4810 /* XCRemoteSwiftPackageReference "ios-library" */;
+			productName = AirshipMessageCenter;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9A36A1F01CE2C76000AF1A7F /* Project object */;
 }

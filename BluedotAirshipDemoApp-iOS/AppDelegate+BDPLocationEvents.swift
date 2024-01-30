@@ -5,7 +5,7 @@
 
 import Foundation
 import BDPointSDK
-import AirshipKit
+import AirshipCore
 
 extension CustomEvent {
     convenience init(zone: BDZoneInfo, fence: BDFenceInfo!, dwellTime: UInt? = nil) {

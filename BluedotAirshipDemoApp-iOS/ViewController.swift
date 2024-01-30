@@ -7,7 +7,7 @@ import UIKit
 import MapKit
 import BDPointSDK
 
-let bluedotProjectId = "YourProjectId"
+let bluedotProjectId = "Bluedot Project ID" // Should be taken from Bluedot Canvas
 
 class ViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
