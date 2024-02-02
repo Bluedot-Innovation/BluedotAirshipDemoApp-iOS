@@ -51,11 +51,11 @@ git lfs install
 ```swift
 extension YourClass: BDPGeoTriggeringEventDelegate {
 
-    func didEnterZone(_ enterEvent: BDZoneEntryEvent) {
+    func didEnterZone(_ triggerEtrerEvent: GeoTriggerEvent) {
         // your logic on checkin
     }
     
-    func didExitZone(_ exitEvent: BDZoneExitEvent) {
+    func didExitZone(_ triggerExitEvent: GeoTriggerEvent) {
         // your logic after checkout
     }
 }
@@ -150,15 +150,15 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 @implementation YourClass
 ...
 
-- (void)didEnterZone:(nonnull GeoTriggerEvent *)enterEvent {
-    NSLog(@"Entered zone: %@", enterEvent.zone.name);
-    CustomEvent *event = [[CustomEvent alloc] initWithZone:enterEvent.zone fence:enterEvent.fence];
+- (void)didEnterZone:(nonnull GeoTriggerEvent *)triggerEvent {
+    NSLog(@"Entered zone: %@", triggerEvent.zoneInfo.name);
+    CustomEvent *event = [[CustomEvent alloc] initWithZone:triggerEvent.zoneInfo];
     [event track];
 }
 
-- (void)didExitZone:(nonnull GeoTriggerEvent *)exitEvent {
-    NSLog(@"Exited zone: %@", exitEvent.zone.name);
-    CustomEvent *event = [[CustomEvent alloc] initWithZone:exitEvent.zone fence:exitEvent.fence dwellTime:exitEvent.duration];
+- (void)didExitZone:(nonnull GeoTriggerEvent *)triggerEvent {
+    NSLog(@"Exited zone: %@", triggerEvent.zoneInfo.name);
+    CustomEvent *event = [[CustomEvent alloc] initWithZone:triggerEvent.zoneInfo dwellTime:triggerEvent.exitEvent.dwellTime];
     [event track];
 }
 
@@ -169,15 +169,15 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 ```swift
 extension YourClass: BDPGeoTriggeringEventDelegate {
 
-    func didEnterZone(_ enterEvent: BDZoneEntryEvent) {
-        print("Entered zone: \(String(describing: enterEvent.zone().name))")
-        let event = CustomEvent(zone: enterEvent.zone(), fence: enterEvent.fence)
+    func didEnterZone(_ triggerEvent: GeoTriggerEvent) {
+        print("Entered zone: \(String(describing: triggerEvent.zoneInfo.name))")
+        let event = CustomEvent(zone: triggerEvent.zoneInfo)
         event.track()
     }
     
-    func didExitZone(_ exitEvent: BDZoneExitEvent) {
+    func didExitZone(_ triggerEvent: GeoTriggerEvent) {
         print("Exited zone: \(String(describing: exitEvent.zone().name))")
-        let event = CustomEvent(zone: exitEvent.zone(), fence: exitEvent.fence, dwellTime: exitEvent.duration)
+        let event = CustomEvent(zone: triggerEvent.zoneInfo, dwellTime: triggerEvent.exitEvent?.dwellTime)
         event.track()
     }
 }
