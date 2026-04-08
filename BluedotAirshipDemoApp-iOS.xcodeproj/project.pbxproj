@@ -13,21 +13,10 @@
 		9A36A2011CE2C76000AF1A7F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A36A1FF1CE2C76000AF1A7F /* Main.storyboard */; };
 		9A36A2031CE2C76000AF1A7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A36A2021CE2C76000AF1A7F /* Assets.xcassets */; };
 		9A36A2061CE2C76000AF1A7F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A36A2041CE2C76000AF1A7F /* LaunchScreen.storyboard */; };
-		9A36A2671CE3F81F00AF1A7F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A36A2601CE3F81F00AF1A7F /* AVFoundation.framework */; };
-		9A36A2681CE3F81F00AF1A7F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A36A2611CE3F81F00AF1A7F /* CoreGraphics.framework */; };
-		9A36A2691CE3F81F00AF1A7F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A36A2621CE3F81F00AF1A7F /* CoreLocation.framework */; };
-		9A36A26A1CE3F81F00AF1A7F /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A36A2631CE3F81F00AF1A7F /* CoreMotion.framework */; };
-		9A36A26B1CE3F81F00AF1A7F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A36A2641CE3F81F00AF1A7F /* MapKit.framework */; };
-		9A36A26C1CE3F81F00AF1A7F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A36A2651CE3F81F00AF1A7F /* SystemConfiguration.framework */; };
-		9A36A26D1CE3F81F00AF1A7F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A36A2661CE3F81F00AF1A7F /* UIKit.framework */; };
-		9A36A26F1CE3F9DD00AF1A7F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A36A26E1CE3F9DD00AF1A7F /* AudioToolbox.framework */; };
-		E1A68EF02B5A07FF000D4810 /* AirshipAutomation in Frameworks */ = {isa = PBXBuildFile; productRef = E1A68EEF2B5A07FF000D4810 /* AirshipAutomation */; };
-		E1A68EF22B5A07FF000D4810 /* AirshipCore in Frameworks */ = {isa = PBXBuildFile; productRef = E1A68EF12B5A07FF000D4810 /* AirshipCore */; };
-		E1A68EF42B5A07FF000D4810 /* AirshipDebug in Frameworks */ = {isa = PBXBuildFile; productRef = E1A68EF32B5A07FF000D4810 /* AirshipDebug */; };
-		E1A68EF62B5A07FF000D4810 /* AirshipFeatureFlags in Frameworks */ = {isa = PBXBuildFile; productRef = E1A68EF52B5A07FF000D4810 /* AirshipFeatureFlags */; };
-		E1A68EF82B5A07FF000D4810 /* AirshipMessageCenter in Frameworks */ = {isa = PBXBuildFile; productRef = E1A68EF72B5A07FF000D4810 /* AirshipMessageCenter */; };
 		E1DDC1932193C68E0002AAA9 /* AppDelegate+BDPLocationEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DDC1922193C68E0002AAA9 /* AppDelegate+BDPLocationEvents.swift */; };
-		FEAF6A8242F2DEEDB6197936 /* Pods_BluedotAirshipDemoApp_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3FA2E22BFE7F0FF4B6CB881 /* Pods_BluedotAirshipDemoApp_iOS.framework */; };
+		E1EE258D2F7B99D500228A83 /* AirshipCore in Frameworks */ = {isa = PBXBuildFile; productRef = E1EE258C2F7B99D500228A83 /* AirshipCore */; };
+		E1EE258F2F7B99D500228A83 /* AirshipDebug in Frameworks */ = {isa = PBXBuildFile; productRef = E1EE258E2F7B99D500228A83 /* AirshipDebug */; };
+		E1FEE0852F7CC2110090A5E7 /* BDPointSDK in Frameworks */ = {isa = PBXBuildFile; productRef = E1FEE0822F7CBFE60090A5E7 /* BDPointSDK */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -52,17 +41,6 @@
 		9A36A2021CE2C76000AF1A7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9A36A2051CE2C76000AF1A7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9A36A2071CE2C76000AF1A7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9A36A2601CE3F81F00AF1A7F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		9A36A2611CE3F81F00AF1A7F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		9A36A2621CE3F81F00AF1A7F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		9A36A2631CE3F81F00AF1A7F /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
-		9A36A2641CE3F81F00AF1A7F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		9A36A2651CE3F81F00AF1A7F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		9A36A2661CE3F81F00AF1A7F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		9A36A26E1CE3F9DD00AF1A7F /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		9ACE3E56ACB0986DF643CBD9 /* Pods-BluedotAirshipDemoApp-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BluedotAirshipDemoApp-iOS.release.xcconfig"; path = "Target Support Files/Pods-BluedotAirshipDemoApp-iOS/Pods-BluedotAirshipDemoApp-iOS.release.xcconfig"; sourceTree = "<group>"; };
-		C3FA2E22BFE7F0FF4B6CB881 /* Pods_BluedotAirshipDemoApp_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BluedotAirshipDemoApp_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D15A7CD15621690817F0CDA6 /* Pods-BluedotAirshipDemoApp-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BluedotAirshipDemoApp-iOS.debug.xcconfig"; path = "Target Support Files/Pods-BluedotAirshipDemoApp-iOS/Pods-BluedotAirshipDemoApp-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		E1C47436211A891F007903EC /* BluedotAirshipDemoApp-iOS.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "BluedotAirshipDemoApp-iOS.entitlements"; sourceTree = "<group>"; };
 		E1DDC1922193C68E0002AAA9 /* AppDelegate+BDPLocationEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+BDPLocationEvents.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,43 +50,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1A68EF22B5A07FF000D4810 /* AirshipCore in Frameworks */,
-				9A36A26F1CE3F9DD00AF1A7F /* AudioToolbox.framework in Frameworks */,
-				E1A68EF82B5A07FF000D4810 /* AirshipMessageCenter in Frameworks */,
-				9A36A2671CE3F81F00AF1A7F /* AVFoundation.framework in Frameworks */,
-				9A36A2681CE3F81F00AF1A7F /* CoreGraphics.framework in Frameworks */,
-				9A36A2691CE3F81F00AF1A7F /* CoreLocation.framework in Frameworks */,
-				9A36A26A1CE3F81F00AF1A7F /* CoreMotion.framework in Frameworks */,
-				9A36A26B1CE3F81F00AF1A7F /* MapKit.framework in Frameworks */,
-				E1A68EF42B5A07FF000D4810 /* AirshipDebug in Frameworks */,
-				9A36A26C1CE3F81F00AF1A7F /* SystemConfiguration.framework in Frameworks */,
-				9A36A26D1CE3F81F00AF1A7F /* UIKit.framework in Frameworks */,
-				E1A68EF02B5A07FF000D4810 /* AirshipAutomation in Frameworks */,
-				E1A68EF62B5A07FF000D4810 /* AirshipFeatureFlags in Frameworks */,
-				FEAF6A8242F2DEEDB6197936 /* Pods_BluedotAirshipDemoApp_iOS.framework in Frameworks */,
+				E1FEE0852F7CC2110090A5E7 /* BDPointSDK in Frameworks */,
+				E1EE258D2F7B99D500228A83 /* AirshipCore in Frameworks */,
+				E1EE258F2F7B99D500228A83 /* AirshipDebug in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		04202C9649423B3C9B4FAD1F /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				D15A7CD15621690817F0CDA6 /* Pods-BluedotAirshipDemoApp-iOS.debug.xcconfig */,
-				9ACE3E56ACB0986DF643CBD9 /* Pods-BluedotAirshipDemoApp-iOS.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		9A36A1EF1CE2C76000AF1A7F = {
 			isa = PBXGroup;
 			children = (
 				306CD55129FAAABE00979596 /* README.md */,
-				9A36A25F1CE3F79900AF1A7F /* Frameworks */,
 				9A36A1FA1CE2C76000AF1A7F /* BluedotAirshipDemoApp-iOS */,
 				9A36A1F91CE2C76000AF1A7F /* Products */,
-				04202C9649423B3C9B4FAD1F /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,22 +91,6 @@
 			path = "BluedotAirshipDemoApp-iOS";
 			sourceTree = "<group>";
 		};
-		9A36A25F1CE3F79900AF1A7F /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				9A36A26E1CE3F9DD00AF1A7F /* AudioToolbox.framework */,
-				9A36A2601CE3F81F00AF1A7F /* AVFoundation.framework */,
-				9A36A2611CE3F81F00AF1A7F /* CoreGraphics.framework */,
-				9A36A2621CE3F81F00AF1A7F /* CoreLocation.framework */,
-				9A36A2631CE3F81F00AF1A7F /* CoreMotion.framework */,
-				9A36A2641CE3F81F00AF1A7F /* MapKit.framework */,
-				9A36A2651CE3F81F00AF1A7F /* SystemConfiguration.framework */,
-				9A36A2661CE3F81F00AF1A7F /* UIKit.framework */,
-				C3FA2E22BFE7F0FF4B6CB881 /* Pods_BluedotAirshipDemoApp_iOS.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -158,13 +98,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9A36A20A1CE2C76000AF1A7F /* Build configuration list for PBXNativeTarget "BluedotAirshipDemoApp-iOS" */;
 			buildPhases = (
-				36FB4926A6C6322867268A0A /* [CP] Check Pods Manifest.lock */,
 				9A36A1F41CE2C76000AF1A7F /* Sources */,
 				9A36A1F51CE2C76000AF1A7F /* Frameworks */,
 				9A36A1F61CE2C76000AF1A7F /* Resources */,
 				9A36A21F1CE2C81100AF1A7F /* Embed Frameworks */,
-				78C8371625BA6E1F009520C5 /* Strip Symbols */,
-				9A0FC0C094BDD0B3BAC793ED /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -172,11 +109,9 @@
 			);
 			name = "BluedotAirshipDemoApp-iOS";
 			packageProductDependencies = (
-				E1A68EEF2B5A07FF000D4810 /* AirshipAutomation */,
-				E1A68EF12B5A07FF000D4810 /* AirshipCore */,
-				E1A68EF32B5A07FF000D4810 /* AirshipDebug */,
-				E1A68EF52B5A07FF000D4810 /* AirshipFeatureFlags */,
-				E1A68EF72B5A07FF000D4810 /* AirshipMessageCenter */,
+				E1EE258C2F7B99D500228A83 /* AirshipCore */,
+				E1EE258E2F7B99D500228A83 /* AirshipDebug */,
+				E1FEE0822F7CBFE60090A5E7 /* BDPointSDK */,
 			);
 			productName = UrbanAirshipSDKTest;
 			productReference = 9A36A1F81CE2C76000AF1A7F /* BluedotAirshipDemoApp-iOS.app */;
@@ -214,7 +149,8 @@
 			);
 			mainGroup = 9A36A1EF1CE2C76000AF1A7F;
 			packageReferences = (
-				E1A68EEE2B5A07FF000D4810 /* XCRemoteSwiftPackageReference "ios-library" */,
+				E1EE258B2F7B99D500228A83 /* XCRemoteSwiftPackageReference "ios-library" */,
+				E1FEE0812F7CBFE60090A5E7 /* XCRemoteSwiftPackageReference "PointSDK-iOS" */,
 			);
 			productRefGroup = 9A36A1F91CE2C76000AF1A7F /* Products */;
 			projectDirPath = "";
@@ -238,66 +174,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		36FB4926A6C6322867268A0A /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-BluedotAirshipDemoApp-iOS-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		78C8371625BA6E1F009520C5 /* Strip Symbols */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Strip Symbols";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "#/bin/bash\nAPP_PATH=\"${TARGET_BUILD_DIR}/${WRAPPER_NAME}\"\n\n# This script loops through the frameworks embedded in the application and\n# removes unused architectures.\nfind \"$APP_PATH\" -name '*.framework' -type d | while read -r FRAMEWORK\ndo\nFRAMEWORK_EXECUTABLE_NAME=$(defaults read \"$FRAMEWORK/Info.plist\" CFBundleExecutable)\nFRAMEWORK_EXECUTABLE_PATH=\"$FRAMEWORK/$FRAMEWORK_EXECUTABLE_NAME\"\necho \"Executable is $FRAMEWORK_EXECUTABLE_PATH\"\n\nEXTRACTED_ARCHS=()\n\nfor ARCH in $ARCHS\ndo\necho \"Extracting $ARCH from $FRAMEWORK_EXECUTABLE_NAME\"\nlipo -extract \"$ARCH\" \"$FRAMEWORK_EXECUTABLE_PATH\" -o \"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\"\nEXTRACTED_ARCHS+=(\"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\")\ndone\n\necho \"Merging extracted architectures: ${ARCHS}\"\nlipo -o \"$FRAMEWORK_EXECUTABLE_PATH-merged\" -create \"${EXTRACTED_ARCHS[@]}\"\nrm \"${EXTRACTED_ARCHS[@]}\"\n\necho \"Replacing original executable with thinned version\"\nrm \"$FRAMEWORK_EXECUTABLE_PATH\"\nmv \"$FRAMEWORK_EXECUTABLE_PATH-merged\" \"$FRAMEWORK_EXECUTABLE_PATH\"\n\ndone\n";
-		};
-		9A0FC0C094BDD0B3BAC793ED /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BluedotAirshipDemoApp-iOS/Pods-BluedotAirshipDemoApp-iOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BluedotAirshipDemoApp-iOS/Pods-BluedotAirshipDemoApp-iOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BluedotAirshipDemoApp-iOS/Pods-BluedotAirshipDemoApp-iOS-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9A36A1F41CE2C76000AF1A7F /* Sources */ = {
@@ -444,70 +320,58 @@
 		};
 		9A36A20B1CE2C76000AF1A7F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D15A7CD15621690817F0CDA6 /* Pods-BluedotAirshipDemoApp-iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "BluedotAirshipDemoApp-iOS/BluedotAirshipDemoApp-iOS.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 9H7C75E224;
 				ENABLE_BITCODE = NO;
 				EXCLUDED_ARCHS = "";
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/PointSDK/include",
-				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "BluedotAirshipDemoApp-iOS/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/PointSDK",
-				);
-				MARKETING_VERSION = 1.0;
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = io.bluedot.AirshipSDKTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
 		9A36A20C1CE2C76000AF1A7F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9ACE3E56ACB0986DF643CBD9 /* Pods-BluedotAirshipDemoApp-iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "BluedotAirshipDemoApp-iOS/BluedotAirshipDemoApp-iOS.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 9H7C75E224;
 				ENABLE_BITCODE = NO;
 				EXCLUDED_ARCHS = "";
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
-				HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/PointSDK/include",
-				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "BluedotAirshipDemoApp-iOS/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/PointSDK",
-				);
-				MARKETING_VERSION = 1.0;
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = io.bluedot.AirshipSDKTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -536,41 +400,39 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		E1A68EEE2B5A07FF000D4810 /* XCRemoteSwiftPackageReference "ios-library" */ = {
+		E1EE258B2F7B99D500228A83 /* XCRemoteSwiftPackageReference "ios-library" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/urbanairship/ios-library";
 			requirement = {
-				kind = exactVersion;
-				version = 17.7.3;
+				kind = upToNextMajorVersion;
+				minimumVersion = 20.6.1;
+			};
+		};
+		E1FEE0812F7CBFE60090A5E7 /* XCRemoteSwiftPackageReference "PointSDK-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Bluedot-Innovation/PointSDK-iOS/";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 17.2.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		E1A68EEF2B5A07FF000D4810 /* AirshipAutomation */ = {
+		E1EE258C2F7B99D500228A83 /* AirshipCore */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = E1A68EEE2B5A07FF000D4810 /* XCRemoteSwiftPackageReference "ios-library" */;
-			productName = AirshipAutomation;
-		};
-		E1A68EF12B5A07FF000D4810 /* AirshipCore */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E1A68EEE2B5A07FF000D4810 /* XCRemoteSwiftPackageReference "ios-library" */;
+			package = E1EE258B2F7B99D500228A83 /* XCRemoteSwiftPackageReference "ios-library" */;
 			productName = AirshipCore;
 		};
-		E1A68EF32B5A07FF000D4810 /* AirshipDebug */ = {
+		E1EE258E2F7B99D500228A83 /* AirshipDebug */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = E1A68EEE2B5A07FF000D4810 /* XCRemoteSwiftPackageReference "ios-library" */;
+			package = E1EE258B2F7B99D500228A83 /* XCRemoteSwiftPackageReference "ios-library" */;
 			productName = AirshipDebug;
 		};
-		E1A68EF52B5A07FF000D4810 /* AirshipFeatureFlags */ = {
+		E1FEE0822F7CBFE60090A5E7 /* BDPointSDK */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = E1A68EEE2B5A07FF000D4810 /* XCRemoteSwiftPackageReference "ios-library" */;
-			productName = AirshipFeatureFlags;
-		};
-		E1A68EF72B5A07FF000D4810 /* AirshipMessageCenter */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E1A68EEE2B5A07FF000D4810 /* XCRemoteSwiftPackageReference "ios-library" */;
-			productName = AirshipMessageCenter;
+			package = E1FEE0812F7CBFE60090A5E7 /* XCRemoteSwiftPackageReference "PointSDK-iOS" */;
+			productName = BDPointSDK;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
