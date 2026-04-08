@@ -7,7 +7,7 @@ import UIKit
 import MapKit
 import BDPointSDK
 
-let bluedotProjectId = "b0f84653-1250-4d96-be07-6968d3018937" //"Bluedot Project ID" // Should be taken from Bluedot Canvas
+let bluedotProjectId = "Bluedot Project ID" // Should be taken from Bluedot Canvas
 
 class ViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
@@ -53,8 +53,6 @@ class ViewController: UIViewController {
             }
         }
     }
-    
-    
 }
 
 extension ViewController: MKMapViewDelegate {

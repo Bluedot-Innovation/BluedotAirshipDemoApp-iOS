@@ -27,13 +27,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // For Debug/XCode apps it should be taken from Airship Test Project Settings -> Channels -> iOS -> Project Details:
         // APP KEY and SECRET
-        config.developmentAppKey = "5NRotEulT8CiLiXAN9qqZg" //"Airship Development App Key"
-        config.developmentAppSecret = "m2OYw7SwRuyhZVASB6TASQ"// "Airship Development App Secret"
+        config.developmentAppKey = "Airship Development App Key" //"Airship Development App Key"
+        config.developmentAppSecret = "Airship Development App Secret"// "Airship Development App Secret"
         
         // For TestFlight apps it should be taken from Airship Live Project Settings -> Channels -> iOS -> Project Details:
         // APP KEY and SECRET
-        config.productionAppKey = "zjN45eRLQnKL63m0ebTbyw" //"YOUR PRODUCTION APP KEY"
-        config.productionAppSecret = "lDl6vtOHQZKsJ0IHcewlcg" //"YOUR PRODUCTION APP SECRET"
+        config.productionAppKey = "Airship Production APP KEY" //"Airship Production APP KEY"
+        config.productionAppSecret = "Airship Production APP SECRET" //"Airship Production APP SECRET"
         
         // Set site. Either .us or .eu
         config.site = .eu
@@ -68,7 +68,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("Fully opted in: \(status.isOptedIn)")
             print("Display status: \(status.displayNotificationStatus)")
         }
-
         
         return true
     }
