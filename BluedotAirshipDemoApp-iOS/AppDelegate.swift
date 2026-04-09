@@ -8,7 +8,7 @@ import BDPointSDK
 import AirshipCore
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
     var window: UIWindow?
 
@@ -68,7 +68,60 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("Fully opted in: \(status.isOptedIn)")
             print("Display status: \(status.displayNotificationStatus)")
         }
+
+        configurePushNotifications()
         
         return true
+    }
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        BDLocationManager.instance().pushNotifications.register(deviceToken)
+    }
+    
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print("APNs registration failed: \(error.localizedDescription)")
+    }
+        
+    private func configurePushNotifications() {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) {
+            (accepted, error) in
+            if !accepted {
+                print("Notification access denied.")
+            }
+            
+            DispatchQueue.main.async {
+                UNUserNotificationCenter.current().delegate = self
+                UIApplication.shared.registerForRemoteNotifications()
+            }
+        }
+        
+        BDLocationManager.instance().pushNotifications.onNotificationReceived = { payload in
+            print("BDPoint push received: \(payload.title)")
+        }
+        
+        BDLocationManager.instance().pushNotifications.onNotificationClicked = { payload in
+            print("BDPoint push clicked: \(payload.title)")
+        }
+    }
+}
+
+// MARK: Push Notifications Extension UNUserNotificationCenterDelegate
+extension AppDelegate {
+    
+    func userNotificationCenter(
+        _ center: UNUserNotificationCenter,
+        willPresent notification: UNNotification) async -> UNNotificationPresentationOptions {
+
+        let handled = BDLocationManager.instance().pushNotifications.handleForeground(notification)
+            return handled ? [.banner, .sound, .badge] : [.banner, .sound, .badge]
+    }
+    
+    func userNotificationCenter(
+        _ center: UNUserNotificationCenter,
+        didReceive response: UNNotificationResponse,
+        withCompletionHandler completionHandler: @escaping () -> Void) {
+            
+        BDLocationManager.instance().pushNotifications.handleResponse(response)
+        completionHandler()
     }
 }
