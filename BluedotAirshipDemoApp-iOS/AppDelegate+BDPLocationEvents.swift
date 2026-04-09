@@ -8,7 +8,7 @@ import BDPointSDK
 import AirshipCore
 
 extension CustomEvent {
-    convenience init(zone: ZoneInfo, dwellTime: TimeInterval? = nil) {
+    init(zone: ZoneInfo, dwellTime: TimeInterval? = nil) {
         // Can customize to any event name or attribute
         // here are just examples to log custom events to Airship when checkin and checkout happen
         let name = dwellTime == nil ? "bluedot_place_entered" : "bluedot_place_exited"
@@ -17,17 +17,24 @@ extension CustomEvent {
         self.interactionType = "location"
         self.interactionID = zone.id.uuidString
         
-        var bluedotProperties = Dictionary<String, String>()
-        zone.customData.forEach {
-            (key, value) in bluedotProperties[key] = value
-        }
-        bluedotProperties["bluedot_zone_name"] = zone.name
-
-        if let dwellTime = dwellTime {
-            bluedotProperties["dwell_time"] = NSNumber(value: dwellTime).stringValue
+        var props : [String: AirshipJSON] = [:]
+        
+        for (key, value) in zone.customData {
+            props[key] = AirshipJSON.string(value)
         }
         
-        self.properties = bluedotProperties
+        
+        props["bluedot_zone_name"] = AirshipJSON.string(zone.name)
+
+        if let dwellTime = dwellTime {
+            props["dwell_time"] =  AirshipJSON.number(dwellTime)
+        }
+        
+        do {
+            try self.setProperties(props)
+        } catch {
+            print("Failed to set Airship event properties: \(error)")
+        }
     }
 }
 

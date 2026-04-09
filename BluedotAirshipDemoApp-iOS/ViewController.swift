@@ -53,8 +53,6 @@ class ViewController: UIViewController {
             }
         }
     }
-    
-    
 }
 
 extension ViewController: MKMapViewDelegate {
